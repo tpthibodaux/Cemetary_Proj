@@ -152,7 +152,7 @@ Partial Class Form1
         Me.gbSearch.Controls.Add(Me.cbCemetery)
         Me.gbSearch.Controls.Add(Me.txtLN)
         Me.gbSearch.Controls.Add(Me.txtFN)
-        Me.gbSearch.Location = New System.Drawing.Point(373, 28)
+        Me.gbSearch.Location = New System.Drawing.Point(378, 9)
         Me.gbSearch.Name = "gbSearch"
         Me.gbSearch.Size = New System.Drawing.Size(796, 207)
         Me.gbSearch.TabIndex = 7
@@ -173,15 +173,15 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
-        Me.gbHistory.Location = New System.Drawing.Point(2, 241)
+        Me.gbHistory.Location = New System.Drawing.Point(10, 222)
         Me.gbHistory.Name = "gbHistory"
-        Me.gbHistory.Size = New System.Drawing.Size(796, 333)
+        Me.gbHistory.Size = New System.Drawing.Size(796, 239)
         Me.gbHistory.TabIndex = 8
         Me.gbHistory.TabStop = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(285, 134)
+        Me.PictureBox1.Location = New System.Drawing.Point(282, 63)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(222, 166)
         Me.PictureBox1.TabIndex = 22
@@ -299,16 +299,16 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
-        Me.gbLocation.Location = New System.Drawing.Point(812, 241)
+        Me.gbLocation.Location = New System.Drawing.Point(812, 222)
         Me.gbLocation.Name = "gbLocation"
-        Me.gbLocation.Size = New System.Drawing.Size(776, 333)
+        Me.gbLocation.Size = New System.Drawing.Size(776, 239)
         Me.gbLocation.TabIndex = 20
         Me.gbLocation.TabStop = False
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(338, 306)
+        Me.ComboBox1.Location = New System.Drawing.Point(569, 199)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(114, 21)
         Me.ComboBox1.TabIndex = 23
@@ -318,7 +318,7 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(282, 307)
+        Me.Label13.Location = New System.Drawing.Point(513, 200)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(50, 16)
         Me.Label13.TabIndex = 22
@@ -326,7 +326,7 @@ Partial Class Form1
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(285, 134)
+        Me.PictureBox2.Location = New System.Drawing.Point(285, 50)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(222, 166)
         Me.PictureBox2.TabIndex = 21
@@ -334,14 +334,14 @@ Partial Class Form1
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(371, 100)
+        Me.TextBox6.Location = New System.Drawing.Point(137, 130)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
         Me.TextBox6.TabIndex = 19
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(634, 100)
+        Me.TextBox7.Location = New System.Drawing.Point(137, 158)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
         Me.TextBox7.TabIndex = 18
@@ -371,7 +371,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(282, 101)
+        Me.Label7.Location = New System.Drawing.Point(51, 133)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 16)
         Me.Label7.TabIndex = 14
@@ -381,7 +381,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(512, 101)
+        Me.Label8.Location = New System.Drawing.Point(15, 159)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 16)
         Me.Label8.TabIndex = 13
@@ -435,7 +435,7 @@ Partial Class Form1
         Me.gbRemarks.Controls.Add(Me.TextBox11)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
-        Me.gbRemarks.Location = New System.Drawing.Point(408, 580)
+        Me.gbRemarks.Location = New System.Drawing.Point(402, 467)
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(787, 96)
         Me.gbRemarks.TabIndex = 21
@@ -499,9 +499,9 @@ Partial Class Form1
         Me.gbDeceased.Controls.Add(Me.btnEditDec)
         Me.gbDeceased.Controls.Add(Me.DataGridView2)
         Me.gbDeceased.Controls.Add(Me.Label17)
-        Me.gbDeceased.Location = New System.Drawing.Point(408, 682)
+        Me.gbDeceased.Location = New System.Drawing.Point(402, 569)
         Me.gbDeceased.Name = "gbDeceased"
-        Me.gbDeceased.Size = New System.Drawing.Size(787, 317)
+        Me.gbDeceased.Size = New System.Drawing.Size(787, 197)
         Me.gbDeceased.TabIndex = 28
         Me.gbDeceased.TabStop = False
         '
@@ -519,7 +519,7 @@ Partial Class Form1
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(6, 50)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(775, 261)
+        Me.DataGridView2.Size = New System.Drawing.Size(775, 138)
         Me.DataGridView2.TabIndex = 29
         '
         'Label17
@@ -535,7 +535,7 @@ Partial Class Form1
         'lblLastUpdate
         '
         Me.lblLastUpdate.AutoSize = True
-        Me.lblLastUpdate.Location = New System.Drawing.Point(12, 1004)
+        Me.lblLastUpdate.Location = New System.Drawing.Point(7, 777)
         Me.lblLastUpdate.Name = "lblLastUpdate"
         Me.lblLastUpdate.Size = New System.Drawing.Size(166, 13)
         Me.lblLastUpdate.TabIndex = 30
@@ -545,7 +545,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1600, 1026)
+        Me.ClientSize = New System.Drawing.Size(1600, 796)
         Me.Controls.Add(Me.lblLastUpdate)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
