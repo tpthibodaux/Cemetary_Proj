@@ -1,0 +1,12 @@
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\bin\Debug\Cemetary_Proj.exe.config
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\bin\Debug\Cemetary_Proj.exe
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\bin\Debug\Cemetary_Proj.pdb
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\bin\Debug\Cemetary_Proj.xml
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.vbprojAssemblyReference.cache
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.Form1.resources
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.Resources.resources
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.vbproj.GenerateResource.cache
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.vbproj.CoreCompileInputs.cache
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.exe
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.xml
+C:\Users\rdaigle17\Downloads\Cemetary_Proj-FormChange\Cemetary_Proj-FormChange\Cemetary_Proj\obj\Debug\Cemetary_Proj.pdb
