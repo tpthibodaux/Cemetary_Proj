@@ -65,16 +65,61 @@ Public Class Form1
     End Sub
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles Button_Search.Click
+
+        ''This section populates a seach bar click for when *Only* First name. It will pull all people from all cemeteries with a specified firstname ()
         Dim Cmd As New SqlCommand
         Dim FName As String = txtFN.Text
         Dim LName As String = txtLN.Text
-
-        ''This section populates a seach bar click for when *Only* First name, last name. It will pull all people from all cemeteries with a specified first and last name ()
-        If cbCemetery.SelectedValue = 0 Then
+        If cbCemetery.SelectedValue = 0 And txtLN.Text = "Last Name" Then
             Dim PrimConn As New SqlConnection
             PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
             Cmd.Connection = PrimConn
             Cmd.CommandType = CommandType.StoredProcedure
+            ''Calls  a stored procedure "RetNameDGVOnluF" that returns first and last name of person = to the first name in the text box
+
+            Cmd.CommandText = "RetNameDGVonlyF"
+            Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
+            PrimConn.Open()
+            Using Adp As New SqlDataAdapter(Cmd)
+                Dim Dt As New DataTable
+                Adp.Fill(Dt)
+                SearchDGV.DataSource = Dt
+            End Using
+            PrimConn.Close()
+
+
+
+            ''This section populates a seach bar click for when *Only* First name and cemetery. It will pull all people from all cemeteries with a specified firstname and cemetery ()
+        ElseIf txtLN.Text = "Last Name" Then
+            Dim Cem_ID As Integer = cbCemetery.SelectedItem(0)
+            Dim PrimConn As New SqlConnection
+            PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
+            Cmd.Connection = PrimConn
+            Cmd.CommandType = CommandType.StoredProcedure
+
+            ''Calls  a stored procedure "" that returns first and last name of person = to the first name in the text box
+            Cmd.CommandText = "RetNameDGVonlyFC"
+            Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
+            Cmd.Parameters.Add(New SqlParameter("@Cem_ID", Cem_ID))
+            PrimConn.Open()
+            Using Adp As New SqlDataAdapter(Cmd)
+                Dim Dt As New DataTable
+                Adp.Fill(Dt)
+                SearchDGV.DataSource = Dt
+            End Using
+            PrimConn.Close()
+
+
+
+
+            ''This section populates a seach bar click for when *Only* First name, last name. It will pull all people from all cemeteries with a specified first and last name ()
+        ElseIf cbCemetery.SelectedValue = 0 Then
+            Dim PrimConn As New SqlConnection
+            PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
+            Cmd.Connection = PrimConn
+            Cmd.CommandType = CommandType.StoredProcedure
+            ''Calls  a stored procedure "RetNameDGVOnluF" that returns first and last name of person = to the first and last name in the text boxes
+
             Cmd.CommandText = "RetNameDGVonlyFL"
             Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
             Cmd.Parameters.Add(New SqlParameter("@Lname", LName))
@@ -113,12 +158,6 @@ Public Class Form1
             PrimConn.Close()
 
         End If
-
-
-
-        ''This section populates a seach bar click for when *Only* First name, last name. It will pull all people from all cemeteries with a specified first and last name 
-
-
 
 
     End Sub
@@ -203,7 +242,9 @@ Public Class Form1
             Price = Dr("Price")
         End If
         TextBox_Section.Text = Section & " " & Section2 & " " & Section3 & " " & Section4
+#Disable Warning BC42104 ' Variable is used before it has been assigned a value
         TextBox_NameOnMemor.Text = Owner1FN & " " & Owner1LN & " " & "&" & " " & Owner2FN & " " & Owner2LN & " " & Owner3FN & " " & Owner3LN
+#Enable Warning BC42104 ' Variable is used before it has been assigned a value
         TextBox_LotNum.Text = LotNum
         TextBox_TypeMemorial.Text = TypeMem
         ComboBox_Phase.Text = Phase
