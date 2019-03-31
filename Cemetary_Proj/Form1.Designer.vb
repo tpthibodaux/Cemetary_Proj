@@ -27,8 +27,6 @@ Partial Class Form1
         Me.lblAdmin = New System.Windows.Forms.Label()
         Me.lblLastUpdate = New System.Windows.Forms.Label()
         Me.gbSearch = New System.Windows.Forms.GroupBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button_Save = New System.Windows.Forms.Button()
         Me.Button_Delete = New System.Windows.Forms.Button()
         Me.Button_Search = New System.Windows.Forms.Button()
@@ -46,7 +44,7 @@ Partial Class Form1
         Me.txtLN = New System.Windows.Forms.TextBox()
         Me.txtFN = New System.Windows.Forms.TextBox()
         Me.gbHistory = New System.Windows.Forms.GroupBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox_DateIssued = New System.Windows.Forms.MaskedTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TxtBoxTitleNum = New System.Windows.Forms.TextBox()
@@ -143,8 +141,6 @@ Partial Class Form1
         'gbSearch
         '
         Me.gbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.gbSearch.Controls.Add(Me.Label18)
-        Me.gbSearch.Controls.Add(Me.Button2)
         Me.gbSearch.Controls.Add(Me.Button_Save)
         Me.gbSearch.Controls.Add(Me.Button_Delete)
         Me.gbSearch.Controls.Add(Me.Button_Search)
@@ -159,24 +155,6 @@ Partial Class Form1
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
         Me.gbSearch.TabStop = False
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(741, 208)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(45, 13)
-        Me.Label18.TabIndex = 15
-        Me.Label18.Text = "Label18"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(647, 202)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(78, 26)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button_Save
         '
@@ -309,7 +287,7 @@ Partial Class Form1
         'gbHistory
         '
         Me.gbHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.gbHistory.Controls.Add(Me.MaskedTextBox1)
+        Me.gbHistory.Controls.Add(Me.MaskedTextBox_DateIssued)
         Me.gbHistory.Controls.Add(Me.PictureBox1)
         Me.gbHistory.Controls.Add(Me.TextBox_Address)
         Me.gbHistory.Controls.Add(Me.TxtBoxTitleNum)
@@ -327,14 +305,14 @@ Partial Class Form1
         Me.gbHistory.TabIndex = 32
         Me.gbHistory.TabStop = False
         '
-        'MaskedTextBox1
+        'MaskedTextBox_DateIssued
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(770, 50)
-        Me.MaskedTextBox1.Mask = "00/00/0000"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(71, 20)
-        Me.MaskedTextBox1.TabIndex = 23
-        Me.MaskedTextBox1.ValidatingType = GetType(Date)
+        Me.MaskedTextBox_DateIssued.Location = New System.Drawing.Point(770, 50)
+        Me.MaskedTextBox_DateIssued.Mask = "00/00/0000"
+        Me.MaskedTextBox_DateIssued.Name = "MaskedTextBox_DateIssued"
+        Me.MaskedTextBox_DateIssued.Size = New System.Drawing.Size(71, 20)
+        Me.MaskedTextBox_DateIssued.TabIndex = 23
+        Me.MaskedTextBox_DateIssued.ValidatingType = GetType(Date)
         '
         'PictureBox1
         '
@@ -766,7 +744,7 @@ Partial Class Form1
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(912, 698)
+        Me.ClientSize = New System.Drawing.Size(980, 698)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
@@ -812,7 +790,7 @@ Partial Class Form1
     Friend WithEvents txtLN As TextBox
     Friend WithEvents txtFN As TextBox
     Friend WithEvents gbHistory As GroupBox
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents MaskedTextBox_DateIssued As MaskedTextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox_Address As TextBox
     Friend WithEvents TxtBoxTitleNum As TextBox
@@ -860,8 +838,6 @@ Partial Class Form1
     Friend WithEvents Button_Search As Button
     Friend WithEvents Button_Save As Button
     Friend WithEvents VScrollBar1 As VScrollBar
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents RetNameDGVBindingSource As BindingSource
     Friend WithEvents GraveSampleDataSet As GraveSampleDataSet
     Friend WithEvents Form1BindingSource As BindingSource

@@ -162,7 +162,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -181,7 +181,7 @@ Public Class Form1
 
         ''This grabs the ID of the title from the data grid view and saves it as integer 'TID' to be used for stored procedures etc
         Dim TID As Integer = SearchDGV.Item(0, i).Value
-        Label18.Text = TID
+
 
         '' This will unleash a stored procedure that will fill most information boxes based off of the Title integer 'TID'
         Dim PrimCom As New SqlConnection
@@ -251,7 +251,7 @@ Public Class Form1
         TextBox_Desc.Text = PlotDesc
         TextBox_Price.Text = Price
         TextBox_Address.Text = Address & " " & City & " " & Zip & " " & State
-
+        MaskedTextBox_DateIssued.Text = DateIssued
     End Sub
 
 End Class
