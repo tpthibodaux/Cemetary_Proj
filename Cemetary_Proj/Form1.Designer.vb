@@ -26,6 +26,9 @@ Partial Class Form1
         Me.lblAdmin = New System.Windows.Forms.Label()
         Me.lblLastUpdate = New System.Windows.Forms.Label()
         Me.gbSearch = New System.Windows.Forms.GroupBox()
+        Me.Button_Save = New System.Windows.Forms.Button()
+        Me.Button_Delete = New System.Windows.Forms.Button()
+        Me.Button_Search = New System.Windows.Forms.Button()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.btnNewCard = New System.Windows.Forms.Button()
         Me.SearchDGV = New System.Windows.Forms.DataGridView()
@@ -49,6 +52,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.gbLocation = New System.Windows.Forms.GroupBox()
+        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -72,14 +76,14 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDeceased = New System.Windows.Forms.GroupBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Casket = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Position = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameOfDeceased = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DeceasedDGV = New System.Windows.Forms.DataGridView()
+        Me.Column_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameOfDeceased = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Position = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Casket = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbHistory.SuspendLayout()
@@ -122,6 +126,9 @@ Partial Class Form1
         'gbSearch
         '
         Me.gbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbSearch.Controls.Add(Me.Button_Save)
+        Me.gbSearch.Controls.Add(Me.Button_Delete)
+        Me.gbSearch.Controls.Add(Me.Button_Search)
         Me.gbSearch.Controls.Add(Me.lblSearch)
         Me.gbSearch.Controls.Add(Me.btnNewCard)
         Me.gbSearch.Controls.Add(Me.SearchDGV)
@@ -133,6 +140,33 @@ Partial Class Form1
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
         Me.gbSearch.TabStop = False
+        '
+        'Button_Save
+        '
+        Me.Button_Save.Location = New System.Drawing.Point(126, 199)
+        Me.Button_Save.Name = "Button_Save"
+        Me.Button_Save.Size = New System.Drawing.Size(151, 23)
+        Me.Button_Save.TabIndex = 13
+        Me.Button_Save.Text = "Save Record"
+        Me.Button_Save.UseVisualStyleBackColor = True
+        '
+        'Button_Delete
+        '
+        Me.Button_Delete.Location = New System.Drawing.Point(466, 199)
+        Me.Button_Delete.Name = "Button_Delete"
+        Me.Button_Delete.Size = New System.Drawing.Size(141, 22)
+        Me.Button_Delete.TabIndex = 12
+        Me.Button_Delete.Text = "Delete Record"
+        Me.Button_Delete.UseVisualStyleBackColor = True
+        '
+        'Button_Search
+        '
+        Me.Button_Search.Location = New System.Drawing.Point(669, 44)
+        Me.Button_Search.Name = "Button_Search"
+        Me.Button_Search.Size = New System.Drawing.Size(85, 20)
+        Me.Button_Search.TabIndex = 11
+        Me.Button_Search.Text = "Search"
+        Me.Button_Search.UseVisualStyleBackColor = True
         '
         'lblSearch
         '
@@ -146,9 +180,9 @@ Partial Class Form1
         '
         'btnNewCard
         '
-        Me.btnNewCard.Location = New System.Drawing.Point(338, 199)
+        Me.btnNewCard.Location = New System.Drawing.Point(302, 199)
         Me.btnNewCard.Name = "btnNewCard"
-        Me.btnNewCard.Size = New System.Drawing.Size(100, 23)
+        Me.btnNewCard.Size = New System.Drawing.Size(136, 23)
         Me.btnNewCard.TabIndex = 6
         Me.btnNewCard.Text = "Add New Card"
         Me.btnNewCard.UseVisualStyleBackColor = True
@@ -344,6 +378,7 @@ Partial Class Form1
         'gbLocation
         '
         Me.gbLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbLocation.Controls.Add(Me.VScrollBar1)
         Me.gbLocation.Controls.Add(Me.ComboBox1)
         Me.gbLocation.Controls.Add(Me.Label13)
         Me.gbLocation.Controls.Add(Me.PictureBox2)
@@ -363,6 +398,13 @@ Partial Class Form1
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
         Me.gbLocation.TabStop = False
+        '
+        'VScrollBar1
+        '
+        Me.VScrollBar1.Location = New System.Drawing.Point(850, -216)
+        Me.VScrollBar1.Name = "VScrollBar1"
+        Me.VScrollBar1.Size = New System.Drawing.Size(17, 492)
+        Me.VScrollBar1.TabIndex = 24
         '
         'ComboBox1
         '
@@ -576,6 +618,50 @@ Partial Class Form1
         Me.gbDeceased.TabIndex = 35
         Me.gbDeceased.TabStop = False
         '
+        'DeceasedDGV
+        '
+        Me.DeceasedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DeceasedDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_Date, Me.NameOfDeceased, Me.Sex, Me.Age, Me.Position, Me.Casket})
+        Me.DeceasedDGV.Location = New System.Drawing.Point(6, 50)
+        Me.DeceasedDGV.Name = "DeceasedDGV"
+        Me.DeceasedDGV.Size = New System.Drawing.Size(855, 171)
+        Me.DeceasedDGV.TabIndex = 29
+        '
+        'Column_Date
+        '
+        Me.Column_Date.HeaderText = "Date"
+        Me.Column_Date.Name = "Column_Date"
+        Me.Column_Date.Width = 75
+        '
+        'NameOfDeceased
+        '
+        Me.NameOfDeceased.HeaderText = "Name of Deceased"
+        Me.NameOfDeceased.Name = "NameOfDeceased"
+        Me.NameOfDeceased.Width = 467
+        '
+        'Sex
+        '
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.Width = 35
+        '
+        'Age
+        '
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.Width = 35
+        '
+        'Position
+        '
+        Me.Position.HeaderText = "Position"
+        Me.Position.Name = "Position"
+        '
+        'Casket
+        '
+        Me.Casket.HeaderText = "Casket"
+        Me.Casket.Name = "Casket"
+        Me.Casket.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -586,56 +672,15 @@ Partial Class Form1
         Me.Label17.TabIndex = 28
         Me.Label17.Text = "Deceased"
         '
-        'Casket
-        '
-        Me.Casket.HeaderText = "Casket"
-        Me.Casket.Name = "Casket"
-        Me.Casket.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Position
-        '
-        Me.Position.HeaderText = "Position"
-        Me.Position.Name = "Position"
-        '
-        'Age
-        '
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.Width = 35
-        '
-        'Sex
-        '
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.Width = 35
-        '
-        'NameOfDeceased
-        '
-        Me.NameOfDeceased.HeaderText = "Name of Deceased"
-        Me.NameOfDeceased.Name = "NameOfDeceased"
-        Me.NameOfDeceased.Width = 467
-        '
-        'Column_Date
-        '
-        Me.Column_Date.HeaderText = "Date"
-        Me.Column_Date.Name = "Column_Date"
-        Me.Column_Date.Width = 75
-        '
-        'DeceasedDGV
-        '
-        Me.DeceasedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DeceasedDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_Date, Me.NameOfDeceased, Me.Sex, Me.Age, Me.Position, Me.Casket})
-        Me.DeceasedDGV.Location = New System.Drawing.Point(6, 50)
-        Me.DeceasedDGV.Name = "DeceasedDGV"
-        Me.DeceasedDGV.Size = New System.Drawing.Size(855, 171)
-        Me.DeceasedDGV.TabIndex = 29
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
+        Me.AutoScrollMargin = New System.Drawing.Size(0, 300)
+        Me.AutoScrollMinSize = New System.Drawing.Size(0, 300)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(873, 1061)
+        Me.ClientSize = New System.Drawing.Size(873, 749)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
@@ -723,4 +768,8 @@ Partial Class Form1
     Friend WithEvents Position As DataGridViewTextBoxColumn
     Friend WithEvents Casket As DataGridViewTextBoxColumn
     Friend WithEvents Label17 As Label
+    Friend WithEvents Button_Delete As Button
+    Friend WithEvents Button_Search As Button
+    Friend WithEvents Button_Save As Button
+    Friend WithEvents VScrollBar1 As VScrollBar
 End Class
