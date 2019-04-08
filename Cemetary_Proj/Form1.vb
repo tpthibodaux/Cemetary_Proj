@@ -2,9 +2,14 @@
 Imports System.Data
 Imports System.Windows.Forms
 
-
-
 Public Class Form1
+
+    Dim PrimConn As New SqlConnection
+    Dim Cmd As New SqlCommand
+
+
+
+
     Private Sub lblAdmin_Click(sender As Object, e As EventArgs) Handles lblAdmin.Click
 
     End Sub
@@ -14,29 +19,13 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ''
-        '' populates the combobox 'cbCemetery' with Cemetery names. Important to replace with official/relevant DB info 
-        Dim PrimCom As New SqlConnection
-        Dim Cmd As New SqlCommand
-        Dim Adp As New SqlDataAdapter
-        Dim Ds As New DataSet
 
-        ''Change to official DB info. Sets up connection/command 
-        PrimCom.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-        Cmd.Connection = PrimCom
-        Cmd.CommandType = CommandType.StoredProcedure
 
-        ''Change to official DB info. Calls a stored procedure "RetCemName" that selects the cemetery name and associated cemetery id (to be used by other stored procedures).
-        Cmd.CommandText = "RetCemName"
-        PrimCom.Open()
-        Adp.SelectCommand = Cmd
-        Adp.Fill(Ds)
-        Adp.Dispose()
-        Cmd.Dispose()
-        PrimCom.Close()
-
+        Dim DS As New DataSet
+        Dim Returner As New Puller
+        DS = Returner.GetCem
         ''Change to official DB info. This populates the info from "RetCemName" into the dropdown. 
-        cbCemetery.DataSource = Ds.Tables(0)
+        cbCemetery.DataSource = DS.Tables(0)
         cbCemetery.ValueMember = "Cem_ID"
         cbCemetery.DisplayMember = "Cem_Desc"
 
@@ -69,151 +58,43 @@ Public Class Form1
 
         ''this sub handles the search bar functionaltiy with interchangeable stored procedures. They all produce the same dataset specified in the Data Grid View 'dgvsearch'
 
-        ''This section populates a seach bar click for when *Only* First name. It will pull all people from all cemeteries with a specified firstname ()
-        Dim Cmd As New SqlCommand
+        ''This section populates a seach bar click for when *Only* First name. It will pull all people from all cemeteries with a specified firstname (
         Dim FName As String = txtFN.Text
         Dim LName As String = txtLN.Text
-        If cbCemetery.SelectedValue = 0 And txtLN.Text = "Last Name" Then
-            Dim PrimConn As New SqlConnection
-            PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-            Cmd.Connection = PrimConn
-            Cmd.CommandType = CommandType.StoredProcedure
-            ''Calls  a stored procedure "RetNameDGVOnluF" that returns first and last name of person = to the first name in the text box
-
-            Cmd.CommandText = "RetNameDGVonlyF"
-            Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
-            PrimConn.Open()
-            Using Adp As New SqlDataAdapter(Cmd)
-                Dim Dt As New DataTable
-                Adp.Fill(Dt)
-                SearchDGV.DataSource = Dt
-            End Using
-            PrimConn.Close()
+        Dim Dt As New DataTable
+        Dim Returner As New Puller
+        If cbCemetery.SelectedValue = 0 And txtLN.Text = "Last Name" Then ''no cem just fname entered
+            Dt = Returner.RetNameDGVonlyF(FName)
+            SearchDGV.DataSource = Dt
 
 
+        ElseIf txtFN.Text = "First Name" And cbCemetery.SelectedValue = 0 Then ''no cem just last name
+            Dt = Returner.RetNameDGVonlyL(LName)
+            SearchDGV.DataSource = Dt
+
+        ElseIf cbCemetery.SelectedValue = 0 Then ''fname and lname entered no cem
+            Dt = Returner.RetNameDGVonlyFL(FName, LName)
+            SearchDGV.DataSource = Dt
 
 
-            ''This section populates a seach bar click for when *Only* Lasr name and cemetery. It will pull all people from all cemeteries with a specified lastname and cemetery ()
-
-
-        ElseIf txtFN.Text = "First Name" Then
+        ElseIf txtFN.Text = "First Name" Then  ''cem selected  and last name entered
             Dim Cem_ID As Integer = cbCemetery.SelectedItem(0)
-            Dim PrimConn As New SqlConnection
-            PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-            Cmd.Connection = PrimConn
-            Cmd.CommandType = CommandType.StoredProcedure
+            Dt = Returner.RetNameDGVonlyLC(LName, Cem_ID)
+            SearchDGV.DataSource = Dt
 
-            ''Calls  a stored procedure "" that returns first and last name of person = to the first name in the text box
-            Cmd.CommandText = "RetNameDGVonlyLC"
-            Cmd.Parameters.Add(New SqlParameter("@Lname", LName))
-            Cmd.Parameters.Add(New SqlParameter("@Cem_ID", Cem_ID))
-            PrimConn.Open()
-            Using Adp As New SqlDataAdapter(Cmd)
-                Dim Dt As New DataTable
-                Adp.Fill(Dt)
-                SearchDGV.DataSource = Dt
-            End Using
+        ElseIf txtLN.Text = "Last Name" Then ''cem selected and first name entered
+            Dim Cem_ID As Integer = cbCemetery.SelectedItem(0)
+            Dt = Returner.RetNameDGVonlyFC(FName, Cem_ID)
+            SearchDGV.DataSource = Dt
+
+        Else
+
+            Dim Cem_ID As Integer = cbCemetery.SelectedItem(0) ''cem entered, fname entered, lname entered
+            Dt = Returner.RetNameDGV(FName, LName, Cem_ID)
+            SearchDGV.DataSource = Dt
             PrimConn.Close()
-
-
-
-            ''This section populates a seach bar click for when *Only* First name and cemetery. It will pull all people from all cemeteries with a specified firstname and cemetery ()
-        ElseIf txtLN.Text = "Last Name" Then
-                Dim Cem_ID As Integer = cbCemetery.SelectedItem(0)
-                Dim PrimConn As New SqlConnection
-                PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-                Cmd.Connection = PrimConn
-                Cmd.CommandType = CommandType.StoredProcedure
-
-                ''Calls  a stored procedure "" that returns first and last name of person = to the first name in the text box
-                Cmd.CommandText = "RetNameDGVonlyFC"
-                Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
-                Cmd.Parameters.Add(New SqlParameter("@Cem_ID", Cem_ID))
-                PrimConn.Open()
-                Using Adp As New SqlDataAdapter(Cmd)
-                    Dim Dt As New DataTable
-                    Adp.Fill(Dt)
-                    SearchDGV.DataSource = Dt
-                End Using
-                PrimConn.Close()
-
-
-
-
-
-
-                ''This section populates a seach bar click for when *Only* Last name is chosen. It will pull all people from all cemeteries with a specified last name ()
-
-            ElseIf txtFN.Text = "First Name" And cbCemetery.SelectedValue = 0 Then
-                Dim PrimConn As New SqlConnection
-                PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-                Cmd.Connection = PrimConn
-                Cmd.CommandType = CommandType.StoredProcedure
-                ''Calls  a stored procedure "" that returns first and last name of person = to the last name in the text box
-                Cmd.CommandText = "RetNameDGVonlyL"
-                Cmd.Parameters.Add(New SqlParameter("@Lname", LName))
-                PrimConn.Open()
-                Using Adp As New SqlDataAdapter(Cmd)
-                    Dim Dt As New DataTable
-                    Adp.Fill(Dt)
-                    SearchDGV.DataSource = Dt
-                End Using
-                PrimConn.Close()
-
-
-
-
-
-
-
-                ''This section populates a seach bar click for when *Only* First name, last name. It will pull all people from all cemeteries with a specified first and last name ()
-            ElseIf cbCemetery.SelectedValue = 0 Then
-                Dim PrimConn As New SqlConnection
-                PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-                Cmd.Connection = PrimConn
-                Cmd.CommandType = CommandType.StoredProcedure
-                ''Calls  a stored procedure "RetNameDGVOnluF" that returns first and last name of person = to the first and last name in the text boxes
-
-                Cmd.CommandText = "RetNameDGVonlyFL"
-                Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
-                Cmd.Parameters.Add(New SqlParameter("@Lname", LName))
-                PrimConn.Open()
-                Using Adp As New SqlDataAdapter(Cmd)
-                    Dim Dt As New DataTable
-                    Adp.Fill(Dt)
-                    SearchDGV.DataSource = Dt
-                End Using
-                PrimConn.Close()
-
-            Else
-
-                ''This section populates the datagrid for a seach bar click for when First name, last name and cemetery info are entered. (More specific results)
-                Dim Cem_ID As Integer = cbCemetery.SelectedItem(0)
-            Dim PrimConn As New SqlConnection
-            PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-            Cmd.Connection = PrimConn
-            Cmd.CommandType = CommandType.StoredProcedure
-            ''Change to official DB info 
-            ''Calls  a stored procedure "RetNameDGV" that returns first and last name of person = to the text boxes and in specified cemetery (from combobox)
-            Cmd.CommandText = "RetNameDGV"
-            Cmd.Parameters.Add(New SqlParameter("@Fname", FName))
-            Cmd.Parameters.Add(New SqlParameter("@Lname", LName))
-            Cmd.Parameters.Add(New SqlParameter("@Cem_ID", Cem_ID))
-            ''Populates the data grid view 'SearchDGV' with the infomation returned from the stored procedure.
-            PrimConn.Open()
-            Using Adp As New SqlDataAdapter(Cmd)
-                Dim Dt As New DataTable
-                Adp.Fill(Dt)
-                SearchDGV.DataSource = Dt
-            End Using
-
-
-
-            PrimConn.Close()
-
         End If
-
-
+        Dt.Dispose()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
@@ -238,11 +119,11 @@ Public Class Form1
 
 
         '' This will unleash a stored procedure that will fill most information boxes based off of the Title integer 'TID'
-        Dim PrimCom As New SqlConnection
+        Dim PrimConn As New SqlConnection
         Dim Cmd As New SqlCommand
         Dim Dr As SqlDataReader
-        PrimCom.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
-        Cmd.Connection = PrimCom
+        PrimConn.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
+        Cmd.Connection = PrimConn
         Cmd.CommandType = CommandType.StoredProcedure
         Cmd.CommandText = "GetSpecInfoForTitle"
         Cmd.Parameters.Add(New SqlParameter("@TitleID", TID))
@@ -256,7 +137,7 @@ Public Class Form1
         Dim Owner3LN As String
         Dim City As String
         Dim State As String
-        Dim Zip As String 
+        Dim Zip As String
         Dim Address As String
         Dim DateIssued As String
         Dim Section As String
@@ -264,14 +145,14 @@ Public Class Form1
         Dim Section3 As String
         Dim Section4 As String
         Dim LotNum As String
-        Dim TypeMem As String 
+        Dim TypeMem As String
         Dim Phase As String
         Dim PlotDesc As String
         Dim Price As String
 
         ''Reads the fake date 
 
-        PrimCom.Open()
+        PrimConn.Open()
         Dr = Cmd.ExecuteReader
         If Dr.Read = True Then
             Owner1FN = Dr("Owner1FN")
