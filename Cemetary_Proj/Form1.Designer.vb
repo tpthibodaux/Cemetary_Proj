@@ -46,7 +46,6 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TxtBoxTitleNum = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox_TitleHolder = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -80,15 +79,6 @@ Partial Class Form1
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDeceased = New System.Windows.Forms.GroupBox()
         Me.DeceasedDGV = New System.Windows.Forms.DataGridView()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.GraveSampleDataSet = New Cemetary_Proj.GraveSampleDataSet()
-        Me.RetNameDGVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RetNameDGVTableAdapter = New Cemetary_Proj.GraveSampleDataSetTableAdapters.RetNameDGVTableAdapter()
-        Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
-        Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GraveSampleDataSet2 = New Cemetary_Proj.GraveSampleDataSet2()
-        Me.GetDaPplBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
         Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,6 +86,16 @@ Partial Class Form1
         Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GetDaPplBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GraveSampleDataSet2 = New Cemetary_Proj.GraveSampleDataSet2()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.GraveSampleDataSet = New Cemetary_Proj.GraveSampleDataSet()
+        Me.RetNameDGVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RetNameDGVTableAdapter = New Cemetary_Proj.GraveSampleDataSetTableAdapters.RetNameDGVTableAdapter()
+        Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
+        Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
+        Me.TextBox_Tier = New System.Windows.Forms.TextBox()
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,11 +107,11 @@ Partial Class Form1
         Me.gbRemarks.SuspendLayout()
         Me.gbDeceased.SuspendLayout()
         CType(Me.DeceasedDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblAdmin
@@ -279,11 +279,9 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.PictureBox1)
         Me.gbHistory.Controls.Add(Me.TextBox_Address)
         Me.gbHistory.Controls.Add(Me.TxtBoxTitleNum)
-        Me.gbHistory.Controls.Add(Me.TextBox2)
         Me.gbHistory.Controls.Add(Me.TextBox_TitleHolder)
         Me.gbHistory.Controls.Add(Me.Label6)
         Me.gbHistory.Controls.Add(Me.Label5)
-        Me.gbHistory.Controls.Add(Me.Label4)
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
@@ -314,7 +312,7 @@ Partial Class Form1
         '
         'TextBox_Address
         '
-        Me.TextBox_Address.Location = New System.Drawing.Point(367, 138)
+        Me.TextBox_Address.Location = New System.Drawing.Point(367, 95)
         Me.TextBox_Address.Multiline = True
         Me.TextBox_Address.Name = "TextBox_Address"
         Me.TextBox_Address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -327,15 +325,6 @@ Partial Class Form1
         Me.TxtBoxTitleNum.Name = "TxtBoxTitleNum"
         Me.TxtBoxTitleNum.Size = New System.Drawing.Size(71, 20)
         Me.TxtBoxTitleNum.TabIndex = 18
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(367, 94)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(240, 40)
-        Me.TextBox2.TabIndex = 16
         '
         'TextBox_TitleHolder
         '
@@ -359,7 +348,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(299, 139)
+        Me.Label5.Location = New System.Drawing.Point(299, 94)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 16)
         Me.Label5.TabIndex = 13
@@ -369,11 +358,11 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(278, 95)
+        Me.Label4.Location = New System.Drawing.Point(315, 71)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 16)
+        Me.Label4.Size = New System.Drawing.Size(35, 16)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Title Owners:"
+        Me.Label4.Text = "Tier:"
         '
         'Label3
         '
@@ -408,6 +397,7 @@ Partial Class Form1
         'gbLocation
         '
         Me.gbLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbLocation.Controls.Add(Me.TextBox_Tier)
         Me.gbLocation.Controls.Add(Me.VScrollBar1)
         Me.gbLocation.Controls.Add(Me.ComboBox_Phase)
         Me.gbLocation.Controls.Add(Me.Label13)
@@ -415,6 +405,7 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.TextBox_LotNum)
         Me.gbLocation.Controls.Add(Me.TextBox_TypeMemorial)
         Me.gbLocation.Controls.Add(Me.TextBox_Section)
+        Me.gbLocation.Controls.Add(Me.Label4)
         Me.gbLocation.Controls.Add(Me.TextBox_Cemetery)
         Me.gbLocation.Controls.Add(Me.TextBox_NameOnMemor)
         Me.gbLocation.Controls.Add(Me.Label7)
@@ -659,52 +650,6 @@ Partial Class Form1
         Me.DeceasedDGV.Size = New System.Drawing.Size(855, 171)
         Me.DeceasedDGV.TabIndex = 29
         '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(346, 16)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(109, 25)
-        Me.Label17.TabIndex = 28
-        Me.Label17.Text = "Deceased"
-        '
-        'GraveSampleDataSet
-        '
-        Me.GraveSampleDataSet.DataSetName = "GraveSampleDataSet"
-        Me.GraveSampleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'RetNameDGVBindingSource
-        '
-        Me.RetNameDGVBindingSource.DataMember = "RetNameDGV"
-        Me.RetNameDGVBindingSource.DataSource = Me.GraveSampleDataSet
-        '
-        'RetNameDGVTableAdapter
-        '
-        Me.RetNameDGVTableAdapter.ClearBeforeFill = True
-        '
-        'RetNameDGVTableAdapter1
-        '
-        Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
-        '
-        'Form1BindingSource
-        '
-        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
-        '
-        'GraveSampleDataSet2
-        '
-        Me.GraveSampleDataSet2.DataSetName = "GraveSampleDataSet2"
-        Me.GraveSampleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'GetDaPplBindingSource
-        '
-        Me.GetDaPplBindingSource.DataMember = "GetDaPpl"
-        Me.GetDaPplBindingSource.DataSource = Me.GraveSampleDataSet2
-        '
-        'GetDaPplTableAdapter
-        '
-        Me.GetDaPplTableAdapter.ClearBeforeFill = True
-        '
         'FNameDataGridViewTextBoxColumn
         '
         Me.FNameDataGridViewTextBoxColumn.DataPropertyName = "FName"
@@ -747,6 +692,59 @@ Partial Class Form1
         Me.CasketDataGridViewTextBoxColumn.HeaderText = "Casket"
         Me.CasketDataGridViewTextBoxColumn.Name = "CasketDataGridViewTextBoxColumn"
         '
+        'GetDaPplBindingSource
+        '
+        Me.GetDaPplBindingSource.DataMember = "GetDaPpl"
+        Me.GetDaPplBindingSource.DataSource = Me.GraveSampleDataSet2
+        '
+        'GraveSampleDataSet2
+        '
+        Me.GraveSampleDataSet2.DataSetName = "GraveSampleDataSet2"
+        Me.GraveSampleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(346, 16)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(109, 25)
+        Me.Label17.TabIndex = 28
+        Me.Label17.Text = "Deceased"
+        '
+        'GraveSampleDataSet
+        '
+        Me.GraveSampleDataSet.DataSetName = "GraveSampleDataSet"
+        Me.GraveSampleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RetNameDGVBindingSource
+        '
+        Me.RetNameDGVBindingSource.DataMember = "RetNameDGV"
+        Me.RetNameDGVBindingSource.DataSource = Me.GraveSampleDataSet
+        '
+        'RetNameDGVTableAdapter
+        '
+        Me.RetNameDGVTableAdapter.ClearBeforeFill = True
+        '
+        'RetNameDGVTableAdapter1
+        '
+        Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
+        '
+        'Form1BindingSource
+        '
+        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
+        '
+        'GetDaPplTableAdapter
+        '
+        Me.GetDaPplTableAdapter.ClearBeforeFill = True
+        '
+        'TextBox_Tier
+        '
+        Me.TextBox_Tier.Location = New System.Drawing.Point(355, 71)
+        Me.TextBox_Tier.Name = "TextBox_Tier"
+        Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Tier.TabIndex = 25
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -779,11 +777,11 @@ Partial Class Form1
         Me.gbDeceased.ResumeLayout(False)
         Me.gbDeceased.PerformLayout()
         CType(Me.DeceasedDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -800,7 +798,6 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox_Address As TextBox
     Friend WithEvents TxtBoxTitleNum As TextBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox_TitleHolder As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -860,4 +857,5 @@ Partial Class Form1
     Friend WithEvents GetDaPplBindingSource As BindingSource
     Friend WithEvents GraveSampleDataSet2 As GraveSampleDataSet2
     Friend WithEvents GetDaPplTableAdapter As GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter
+    Friend WithEvents TextBox_Tier As TextBox
 End Class

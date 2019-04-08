@@ -149,6 +149,7 @@ Public Class Form1
         Dim Phase As String
         Dim PlotDesc As String
         Dim Price As String
+        Dim tier As String
 
         ''Reads the fake date 
 
@@ -175,6 +176,7 @@ Public Class Form1
             Phase = Dr("Phase")
             PlotDesc = Dr("PlotDesc")
             Price = Dr("Price")
+            tier = Dr("Tier")
         End If
         TextBox_Section.Text = Section & " " & Section2 & " " & Section3 & " " & Section4
 #Disable Warning BC42104 ' Variable is used before it has been assigned a value
@@ -187,7 +189,7 @@ Public Class Form1
         TextBox_Price.Text = Price
         TextBox_Address.Text = Address & " " & City & " " & Zip & " " & State
         MaskedTextBox_DateIssued.Text = DateIssued
-
+        TextBox_Tier.Text = tier
 
 
 
