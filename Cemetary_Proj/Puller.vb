@@ -5,6 +5,7 @@ Public Class Puller
     Dim PrimCom As New SqlConnection
     Dim Cmd As New SqlCommand
     Dim Adp As New SqlDataAdapter
+    Dim DR As SqlDataReader
 
     Public Sub New()
 
@@ -149,5 +150,39 @@ Public Class Puller
     End Function
 
 
+    Public Function GetSpecInfoForTitle(TitleID As Integer) As SpecInfo
+        Dim Info As New SpecInfo
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "GetSpecInfoForTitle"
+        Cmd.Parameters.Add(New SqlParameter("@TitleID", TitleID))
+        PrimCom.Open()
+        DR = Cmd.ExecuteReader
+        If DR.Read = True Then
+            Info.Owner1FN = DR("Owner1FN")
+            Info.Owner1LN = DR("Owner1LN")
+            Info.Owner2FN = DR("Owner2FN")
+            Info.Owner2LN = DR("Owner2LN")
+            Info.Owner3FN = DR("Owner3FN")
+            Info.Owner3LN = DR("Owner3LN")
+            Info.City = DR("City")
+            Info.State = DR("State")
+            Info.Zip = DR("Zip")
+            Info.Address = DR("Address")
+            Info.DateIssued = DR("DateIssued")
+            Info.Section = DR("Section")
+            Info.Section2 = DR("Section2")
+            Info.Section3 = DR("Section3")
+            Info.Section4 = DR("Section4")
+            Info.LotNum = DR("LotNum")
+            Info.TypeMem = DR("TypeMem")
+            Info.Phase = DR("Phase")
+            Info.PlotDesc = DR("PlotDesc")
+            Info.Price = DR("Price")
+            Info.tier = DR("Tier")
+        End If
+        PrimCom.Close()
+
+        Return Info
+    End Function
 
 End Class
