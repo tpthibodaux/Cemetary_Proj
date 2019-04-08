@@ -49,11 +49,12 @@ Partial Class Form1
         Me.TextBox_TitleHolder = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbLocation = New System.Windows.Forms.GroupBox()
+        Me.TextBox_Tier = New System.Windows.Forms.TextBox()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.ComboBox_Phase = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -93,9 +94,8 @@ Partial Class Form1
         Me.RetNameDGVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RetNameDGVTableAdapter = New Cemetary_Proj.GraveSampleDataSetTableAdapters.RetNameDGVTableAdapter()
         Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
-        Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
-        Me.TextBox_Tier = New System.Windows.Forms.TextBox()
+        Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -354,16 +354,6 @@ Partial Class Form1
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Address:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(315, 71)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 16)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Tier:"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -394,6 +384,16 @@ Partial Class Form1
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "History of Ownership"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(315, 71)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(35, 16)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Tier:"
+        '
         'gbLocation
         '
         Me.gbLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -419,6 +419,13 @@ Partial Class Form1
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
         Me.gbLocation.TabStop = False
+        '
+        'TextBox_Tier
+        '
+        Me.TextBox_Tier.Location = New System.Drawing.Point(355, 71)
+        Me.TextBox_Tier.Name = "TextBox_Tier"
+        Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Tier.TabIndex = 25
         '
         'VScrollBar1
         '
@@ -730,20 +737,13 @@ Partial Class Form1
         '
         Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
         '
-        'Form1BindingSource
-        '
-        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
-        '
         'GetDaPplTableAdapter
         '
         Me.GetDaPplTableAdapter.ClearBeforeFill = True
         '
-        'TextBox_Tier
+        'Form1BindingSource
         '
-        Me.TextBox_Tier.Location = New System.Drawing.Point(355, 71)
-        Me.TextBox_Tier.Name = "TextBox_Tier"
-        Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Tier.TabIndex = 25
+        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
         '
         'Form1
         '
@@ -753,7 +753,7 @@ Partial Class Form1
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1235, 698)
+        Me.ClientSize = New System.Drawing.Size(1337, 698)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
