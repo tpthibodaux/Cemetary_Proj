@@ -187,6 +187,30 @@ Public Class Form1
         TextBox_Price.Text = Price
         TextBox_Address.Text = Address & " " & City & " " & Zip & " " & State
         MaskedTextBox_DateIssued.Text = DateIssued
+
+
+
+
+
+        Dim dattab As New DataTable
+        Dim FillObj As New Puller
+        dattab = FillObj.GetdaPpl(TID)
+        DeceasedDGV.DataSource = dattab
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     End Sub
+
 
 End Class

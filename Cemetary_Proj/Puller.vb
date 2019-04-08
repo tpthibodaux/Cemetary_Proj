@@ -131,4 +131,23 @@ Public Class Puller
     End Function
 
 
+
+    Public Function GetdaPpl(Tit_ID As Integer) As _
+         DataTable
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "GetDaPpl"
+        Cmd.Parameters.Add(New SqlParameter("@Tit_ID", Tit_ID))
+
+        Dim Dt As New DataTable
+        PrimCom.Open()
+        Using Adp As New SqlDataAdapter(Cmd)
+            Adp.Fill(Dt)
+            Adp.Dispose()
+            Cmd.Dispose()
+        End Using
+        Return Dt
+    End Function
+
+
+
 End Class
