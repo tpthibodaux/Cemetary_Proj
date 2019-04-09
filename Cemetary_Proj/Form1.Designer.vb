@@ -299,6 +299,7 @@ Partial Class Form1
         Me.MaskedTextBox_DateIssued.Location = New System.Drawing.Point(770, 50)
         Me.MaskedTextBox_DateIssued.Mask = "00/00/0000"
         Me.MaskedTextBox_DateIssued.Name = "MaskedTextBox_DateIssued"
+        Me.MaskedTextBox_DateIssued.ReadOnly = True
         Me.MaskedTextBox_DateIssued.Size = New System.Drawing.Size(71, 20)
         Me.MaskedTextBox_DateIssued.TabIndex = 23
         Me.MaskedTextBox_DateIssued.ValidatingType = GetType(Date)
@@ -318,14 +319,17 @@ Partial Class Form1
         Me.TextBox_Address.Location = New System.Drawing.Point(367, 95)
         Me.TextBox_Address.Multiline = True
         Me.TextBox_Address.Name = "TextBox_Address"
+        Me.TextBox_Address.ReadOnly = True
         Me.TextBox_Address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox_Address.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_Address.TabIndex = 19
         '
         'TxtBoxTitleNum
         '
+        Me.TxtBoxTitleNum.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.TxtBoxTitleNum.Location = New System.Drawing.Point(770, 94)
         Me.TxtBoxTitleNum.Name = "TxtBoxTitleNum"
+        Me.TxtBoxTitleNum.ReadOnly = True
         Me.TxtBoxTitleNum.Size = New System.Drawing.Size(71, 20)
         Me.TxtBoxTitleNum.TabIndex = 18
         '
@@ -334,6 +338,7 @@ Partial Class Form1
         Me.TextBox_TitleHolder.Location = New System.Drawing.Point(367, 49)
         Me.TextBox_TitleHolder.Multiline = True
         Me.TextBox_TitleHolder.Name = "TextBox_TitleHolder"
+        Me.TextBox_TitleHolder.ReadOnly = True
         Me.TextBox_TitleHolder.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_TitleHolder.TabIndex = 15
         '
@@ -427,6 +432,7 @@ Partial Class Form1
         '
         Me.TextBox_Tier.Location = New System.Drawing.Point(355, 71)
         Me.TextBox_Tier.Name = "TextBox_Tier"
+        Me.TextBox_Tier.ReadOnly = True
         Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Tier.TabIndex = 25
         '
@@ -469,6 +475,7 @@ Partial Class Form1
         '
         Me.TextBox_LotNum.Location = New System.Drawing.Point(209, 131)
         Me.TextBox_LotNum.Name = "TextBox_LotNum"
+        Me.TextBox_LotNum.ReadOnly = True
         Me.TextBox_LotNum.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_LotNum.TabIndex = 19
         '
@@ -476,6 +483,7 @@ Partial Class Form1
         '
         Me.TextBox_TypeMemorial.Location = New System.Drawing.Point(209, 159)
         Me.TextBox_TypeMemorial.Name = "TextBox_TypeMemorial"
+        Me.TextBox_TypeMemorial.ReadOnly = True
         Me.TextBox_TypeMemorial.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_TypeMemorial.TabIndex = 18
         '
@@ -483,6 +491,7 @@ Partial Class Form1
         '
         Me.TextBox_Section.Location = New System.Drawing.Point(209, 101)
         Me.TextBox_Section.Name = "TextBox_Section"
+        Me.TextBox_Section.ReadOnly = True
         Me.TextBox_Section.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Section.TabIndex = 17
         '
@@ -490,6 +499,7 @@ Partial Class Form1
         '
         Me.TextBox_Cemetery.Location = New System.Drawing.Point(209, 72)
         Me.TextBox_Cemetery.Name = "TextBox_Cemetery"
+        Me.TextBox_Cemetery.ReadOnly = True
         Me.TextBox_Cemetery.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Cemetery.TabIndex = 16
         '
@@ -498,6 +508,7 @@ Partial Class Form1
         Me.TextBox_NameOnMemor.Location = New System.Drawing.Point(209, 45)
         Me.TextBox_NameOnMemor.Multiline = True
         Me.TextBox_NameOnMemor.Name = "TextBox_NameOnMemor"
+        Me.TextBox_NameOnMemor.ReadOnly = True
         Me.TextBox_NameOnMemor.Size = New System.Drawing.Size(246, 20)
         Me.TextBox_NameOnMemor.TabIndex = 15
         '
@@ -598,6 +609,7 @@ Partial Class Form1
         '
         Me.TextBox_Price.Location = New System.Drawing.Point(424, 62)
         Me.TextBox_Price.Name = "TextBox_Price"
+        Me.TextBox_Price.ReadOnly = True
         Me.TextBox_Price.Size = New System.Drawing.Size(85, 20)
         Me.TextBox_Price.TabIndex = 26
         '
@@ -616,6 +628,7 @@ Partial Class Form1
         Me.TextBox_Desc.Location = New System.Drawing.Point(121, 50)
         Me.TextBox_Desc.Multiline = True
         Me.TextBox_Desc.Name = "TextBox_Desc"
+        Me.TextBox_Desc.ReadOnly = True
         Me.TextBox_Desc.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_Desc.TabIndex = 24
         '
