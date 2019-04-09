@@ -154,7 +154,7 @@ Public Class Puller
         Dim Info As New SpecInfo
         Cmd.Parameters.Clear()
         Cmd.CommandText = "GetSpecInfoForTitle"
-        Cmd.Parameters.Add(New SqlParameter("@TitleID", TitleID))
+        Cmd.Parameters.Add(New SqlParameter("@TitID", TitleID))
         PrimCom.Open()
         DR = Cmd.ExecuteReader
         If DR.Read = True Then
@@ -165,9 +165,9 @@ Public Class Puller
             Info.Owner3FN = DR("Owner3FN")
             Info.Owner3LN = DR("Owner3LN")
             Info.City = DR("City")
-            Info.State = DR("State")
+            Info.State = DR("_State")
             Info.Zip = DR("Zip")
-            Info.Address = DR("Address")
+            Info.Address = DR("_Address")
             Info.DateIssued = DR("DateIssued")
             Info.Section = DR("Section")
             Info.Section2 = DR("Section2")
@@ -184,5 +184,85 @@ Public Class Puller
 
         Return Info
     End Function
+
+    Public Sub InsertRecord(
+     TOFName As String,
+     TOFName2 As String,
+     TOFName3 As String,
+     TOFName4 As String,
+     TOLName As String,
+     TOLName2 As String,
+     TOLName3 As String,
+     TOLName4 As String,
+     TOSuffix As String,
+     TOSuffix2 As String,
+     TOSuffix3 As String,
+     TOSuffix4 As String,
+     TOMI As String,
+     TOMI2 As String,
+     TOMI3 As String,
+     TOMI4 As String,
+     CemID As Integer
+        )
+
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "AddRecord"
+        Cmd.Parameters.Add(New SqlParameter("@TOFName", TOFName))
+        Cmd.Parameters.Add(New SqlParameter("@TOFName2", TOFName2))
+        Cmd.Parameters.Add(New SqlParameter("@TOFName3", TOFName3))
+        Cmd.Parameters.Add(New SqlParameter("@TOFName4", TOFName4))
+        Cmd.Parameters.Add(New SqlParameter("@TOLName", TOLName))
+        Cmd.Parameters.Add(New SqlParameter("@TOLName2", TOLName2))
+        Cmd.Parameters.Add(New SqlParameter("@TOLName3", TOLName3))
+        Cmd.Parameters.Add(New SqlParameter("@TOLName4", TOLName4))
+        Cmd.Parameters.Add(New SqlParameter("@TOSuffix", TOSuffix))
+        Cmd.Parameters.Add(New SqlParameter("@TOSuffix2", TOSuffix2))
+        Cmd.Parameters.Add(New SqlParameter("@TOSuffix3", TOSuffix3))
+        Cmd.Parameters.Add(New SqlParameter("@TOSuffix4", TOSuffix4))
+        Cmd.Parameters.Add(New SqlParameter("@TOMI", TOMI))
+        Cmd.Parameters.Add(New SqlParameter("@TOMI2", TOMI2))
+        Cmd.Parameters.Add(New SqlParameter("@TOMI3", TOMI3))
+        Cmd.Parameters.Add(New SqlParameter("@TOMI4", TOMI4))
+        Cmd.Parameters.Add(New SqlParameter("@CemID", CemID))
+        PrimCom.Open()
+        Cmd.ExecuteNonQuery()
+        PrimCom.Close()
+    End Sub
+
+    Public Sub InsertSpecINfo(
+    Owner1FN As String,
+    Owner1LN As String,
+    City As String,
+    State As String,
+    Zip As String,
+    Address As String,
+    DateIssued As String,
+        Section As String,
+        LotNum As String,
+        TypeMem As String,
+    Phase As String,
+        PlotDesc As String,
+        Price As Integer
+        )
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "AddSpecInfo"
+        Cmd.Parameters.Add(New SqlParameter("@Owner1FN", Owner1FN))
+        Cmd.Parameters.Add(New SqlParameter("@Owner1LN", Owner1LN))
+        Cmd.Parameters.Add(New SqlParameter("@City", City))
+        Cmd.Parameters.Add(New SqlParameter("@State", State))
+        Cmd.Parameters.Add(New SqlParameter("@Zip", Zip))
+        Cmd.Parameters.Add(New SqlParameter("@Address", Address))
+        Cmd.Parameters.Add(New SqlParameter("@DateIssued", DateIssued))
+        Cmd.Parameters.Add(New SqlParameter("@Section", Section))
+        Cmd.Parameters.Add(New SqlParameter("@LotNum", LotNum))
+        Cmd.Parameters.Add(New SqlParameter("@TypeMem", TypeMem))
+        Cmd.Parameters.Add(New SqlParameter("@Phase", Phase))
+        Cmd.Parameters.Add(New SqlParameter("@PlotDesc", PlotDesc))
+        Cmd.Parameters.Add(New SqlParameter("@Price", Price))
+        PrimCom.Open()
+        Cmd.ExecuteNonQuery()
+        PrimCom.Close()
+    End Sub
+
 
 End Class

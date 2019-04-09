@@ -33,6 +33,9 @@ Public Class Form1
 
 
 
+
+
+
     End Sub
 
     Private Sub Button_Delete_Click(sender As Object, e As EventArgs) Handles Button_Delete.Click
@@ -44,11 +47,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnNewCard_Click(sender As Object, e As EventArgs) Handles btnNewCard.Click
-
-
-
-
-
+        AddRecord.Show()
     End Sub
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles Button_Search.Click
@@ -90,6 +89,11 @@ Public Class Form1
     Private Sub SearchDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles SearchDGV.CellDoubleClick
         '' this grabs the all of values in the datagrid view and assigns them to appropriate textboxes 
         Dim i As Integer
+
+
+
+
+
         i = SearchDGV.CurrentRow.Index
         TxtBoxTitleNum.Text = SearchDGV.Item(0, i).Value
         TextBox_TitleHolder.Text = SearchDGV.Item(1, i).Value & " " & SearchDGV.Item(2, i).Value & " " & SearchDGV.Item(3, i).Value

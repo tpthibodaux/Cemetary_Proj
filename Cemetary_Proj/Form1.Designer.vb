@@ -80,13 +80,6 @@ Partial Class Form1
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDeceased = New System.Windows.Forms.GroupBox()
         Me.DeceasedDGV = New System.Windows.Forms.DataGridView()
-        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GetDaPplBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GraveSampleDataSet2 = New Cemetary_Proj.GraveSampleDataSet2()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -96,6 +89,13 @@ Partial Class Form1
         Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
         Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
         Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,6 +192,8 @@ Partial Class Form1
         '
         'SearchDGV
         '
+        Me.SearchDGV.AllowUserToAddRows = False
+        Me.SearchDGV.AllowUserToDeleteRows = False
         Me.SearchDGV.AutoGenerateColumns = False
         Me.SearchDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SearchDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
@@ -648,56 +650,16 @@ Partial Class Form1
         '
         'DeceasedDGV
         '
+        Me.DeceasedDGV.AllowUserToAddRows = False
+        Me.DeceasedDGV.AllowUserToDeleteRows = False
         Me.DeceasedDGV.AutoGenerateColumns = False
         Me.DeceasedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DeceasedDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FNameDataGridViewTextBoxColumn, Me.LNameDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.SexDataGridViewTextBoxColumn, Me.PositionDataGridViewTextBoxColumn, Me.CasketDataGridViewTextBoxColumn})
         Me.DeceasedDGV.DataSource = Me.GetDaPplBindingSource
-        Me.DeceasedDGV.Location = New System.Drawing.Point(6, 50)
+        Me.DeceasedDGV.Location = New System.Drawing.Point(20, 50)
         Me.DeceasedDGV.Name = "DeceasedDGV"
-        Me.DeceasedDGV.Size = New System.Drawing.Size(855, 171)
+        Me.DeceasedDGV.Size = New System.Drawing.Size(841, 171)
         Me.DeceasedDGV.TabIndex = 29
-        '
-        'FNameDataGridViewTextBoxColumn
-        '
-        Me.FNameDataGridViewTextBoxColumn.DataPropertyName = "FName"
-        Me.FNameDataGridViewTextBoxColumn.HeaderText = "FName"
-        Me.FNameDataGridViewTextBoxColumn.Name = "FNameDataGridViewTextBoxColumn"
-        '
-        'LNameDataGridViewTextBoxColumn
-        '
-        Me.LNameDataGridViewTextBoxColumn.DataPropertyName = "LName"
-        Me.LNameDataGridViewTextBoxColumn.HeaderText = "LName"
-        Me.LNameDataGridViewTextBoxColumn.Name = "LNameDataGridViewTextBoxColumn"
-        '
-        'DateDataGridViewTextBoxColumn
-        '
-        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "Date"
-        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
-        '
-        'AgeDataGridViewTextBoxColumn
-        '
-        Me.AgeDataGridViewTextBoxColumn.DataPropertyName = "Age"
-        Me.AgeDataGridViewTextBoxColumn.HeaderText = "Age"
-        Me.AgeDataGridViewTextBoxColumn.Name = "AgeDataGridViewTextBoxColumn"
-        '
-        'SexDataGridViewTextBoxColumn
-        '
-        Me.SexDataGridViewTextBoxColumn.DataPropertyName = "Sex"
-        Me.SexDataGridViewTextBoxColumn.HeaderText = "Sex"
-        Me.SexDataGridViewTextBoxColumn.Name = "SexDataGridViewTextBoxColumn"
-        '
-        'PositionDataGridViewTextBoxColumn
-        '
-        Me.PositionDataGridViewTextBoxColumn.DataPropertyName = "Position"
-        Me.PositionDataGridViewTextBoxColumn.HeaderText = "Position"
-        Me.PositionDataGridViewTextBoxColumn.Name = "PositionDataGridViewTextBoxColumn"
-        '
-        'CasketDataGridViewTextBoxColumn
-        '
-        Me.CasketDataGridViewTextBoxColumn.DataPropertyName = "Casket"
-        Me.CasketDataGridViewTextBoxColumn.HeaderText = "Casket"
-        Me.CasketDataGridViewTextBoxColumn.Name = "CasketDataGridViewTextBoxColumn"
         '
         'GetDaPplBindingSource
         '
@@ -745,6 +707,53 @@ Partial Class Form1
         '
         Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
         '
+        'FNameDataGridViewTextBoxColumn
+        '
+        Me.FNameDataGridViewTextBoxColumn.DataPropertyName = "FName"
+        Me.FNameDataGridViewTextBoxColumn.HeaderText = "FName"
+        Me.FNameDataGridViewTextBoxColumn.Name = "FNameDataGridViewTextBoxColumn"
+        Me.FNameDataGridViewTextBoxColumn.Width = 150
+        '
+        'LNameDataGridViewTextBoxColumn
+        '
+        Me.LNameDataGridViewTextBoxColumn.DataPropertyName = "LName"
+        Me.LNameDataGridViewTextBoxColumn.HeaderText = "LName"
+        Me.LNameDataGridViewTextBoxColumn.Name = "LNameDataGridViewTextBoxColumn"
+        Me.LNameDataGridViewTextBoxColumn.Width = 150
+        '
+        'DateDataGridViewTextBoxColumn
+        '
+        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "Date"
+        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
+        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
+        Me.DateDataGridViewTextBoxColumn.Width = 200
+        '
+        'AgeDataGridViewTextBoxColumn
+        '
+        Me.AgeDataGridViewTextBoxColumn.DataPropertyName = "Age"
+        Me.AgeDataGridViewTextBoxColumn.HeaderText = "Age"
+        Me.AgeDataGridViewTextBoxColumn.Name = "AgeDataGridViewTextBoxColumn"
+        Me.AgeDataGridViewTextBoxColumn.Width = 50
+        '
+        'SexDataGridViewTextBoxColumn
+        '
+        Me.SexDataGridViewTextBoxColumn.DataPropertyName = "Sex"
+        Me.SexDataGridViewTextBoxColumn.HeaderText = "Sex"
+        Me.SexDataGridViewTextBoxColumn.Name = "SexDataGridViewTextBoxColumn"
+        Me.SexDataGridViewTextBoxColumn.Width = 50
+        '
+        'PositionDataGridViewTextBoxColumn
+        '
+        Me.PositionDataGridViewTextBoxColumn.DataPropertyName = "Position"
+        Me.PositionDataGridViewTextBoxColumn.HeaderText = "Position"
+        Me.PositionDataGridViewTextBoxColumn.Name = "PositionDataGridViewTextBoxColumn"
+        '
+        'CasketDataGridViewTextBoxColumn
+        '
+        Me.CasketDataGridViewTextBoxColumn.DataPropertyName = "Casket"
+        Me.CasketDataGridViewTextBoxColumn.HeaderText = "Casket"
+        Me.CasketDataGridViewTextBoxColumn.Name = "CasketDataGridViewTextBoxColumn"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -753,7 +762,7 @@ Partial Class Form1
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1337, 698)
+        Me.ClientSize = New System.Drawing.Size(1068, 698)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
@@ -847,6 +856,10 @@ Partial Class Form1
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Suffix As DataGridViewTextBoxColumn
     Friend WithEvents CemeteryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GetDaPplBindingSource As BindingSource
+    Friend WithEvents GraveSampleDataSet2 As GraveSampleDataSet2
+    Friend WithEvents GetDaPplTableAdapter As GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter
+    Friend WithEvents TextBox_Tier As TextBox
     Friend WithEvents FNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -854,8 +867,4 @@ Partial Class Form1
     Friend WithEvents SexDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CasketDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents GetDaPplBindingSource As BindingSource
-    Friend WithEvents GraveSampleDataSet2 As GraveSampleDataSet2
-    Friend WithEvents GetDaPplTableAdapter As GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter
-    Friend WithEvents TextBox_Tier As TextBox
 End Class
