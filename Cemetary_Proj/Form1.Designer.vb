@@ -79,7 +79,15 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDeceased = New System.Windows.Forms.GroupBox()
+        Me.btn_AddDec = New System.Windows.Forms.Button()
         Me.DeceasedDGV = New System.Windows.Forms.DataGridView()
+        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GetDaPplBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GraveSampleDataSet2 = New Cemetary_Proj.GraveSampleDataSet2()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -89,13 +97,6 @@ Partial Class Form1
         Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
         Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
         Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -287,7 +288,7 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
-        Me.gbHistory.Location = New System.Drawing.Point(102, 263)
+        Me.gbHistory.Location = New System.Drawing.Point(102, 265)
         Me.gbHistory.Name = "gbHistory"
         Me.gbHistory.Size = New System.Drawing.Size(867, 216)
         Me.gbHistory.TabIndex = 32
@@ -416,7 +417,7 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
-        Me.gbLocation.Location = New System.Drawing.Point(102, 485)
+        Me.gbLocation.Location = New System.Drawing.Point(102, 498)
         Me.gbLocation.Name = "gbLocation"
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
@@ -569,7 +570,7 @@ Partial Class Form1
         Me.gbRemarks.Controls.Add(Me.TextBox_Desc)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
-        Me.gbRemarks.Location = New System.Drawing.Point(102, 746)
+        Me.gbRemarks.Location = New System.Drawing.Point(102, 743)
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(867, 96)
         Me.gbRemarks.TabIndex = 34
@@ -640,13 +641,23 @@ Partial Class Form1
         '
         'gbDeceased
         '
+        Me.gbDeceased.Controls.Add(Me.btn_AddDec)
         Me.gbDeceased.Controls.Add(Me.DeceasedDGV)
         Me.gbDeceased.Controls.Add(Me.Label17)
-        Me.gbDeceased.Location = New System.Drawing.Point(96, 859)
+        Me.gbDeceased.Location = New System.Drawing.Point(102, 845)
         Me.gbDeceased.Name = "gbDeceased"
         Me.gbDeceased.Size = New System.Drawing.Size(867, 227)
         Me.gbDeceased.TabIndex = 35
         Me.gbDeceased.TabStop = False
+        '
+        'btn_AddDec
+        '
+        Me.btn_AddDec.Location = New System.Drawing.Point(715, 19)
+        Me.btn_AddDec.Name = "btn_AddDec"
+        Me.btn_AddDec.Size = New System.Drawing.Size(130, 25)
+        Me.btn_AddDec.TabIndex = 30
+        Me.btn_AddDec.Text = "Add Deceased"
+        Me.btn_AddDec.UseVisualStyleBackColor = True
         '
         'DeceasedDGV
         '
@@ -660,52 +671,6 @@ Partial Class Form1
         Me.DeceasedDGV.Name = "DeceasedDGV"
         Me.DeceasedDGV.Size = New System.Drawing.Size(841, 171)
         Me.DeceasedDGV.TabIndex = 29
-        '
-        'GetDaPplBindingSource
-        '
-        Me.GetDaPplBindingSource.DataMember = "GetDaPpl"
-        Me.GetDaPplBindingSource.DataSource = Me.GraveSampleDataSet2
-        '
-        'GraveSampleDataSet2
-        '
-        Me.GraveSampleDataSet2.DataSetName = "GraveSampleDataSet2"
-        Me.GraveSampleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(346, 16)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(109, 25)
-        Me.Label17.TabIndex = 28
-        Me.Label17.Text = "Deceased"
-        '
-        'GraveSampleDataSet
-        '
-        Me.GraveSampleDataSet.DataSetName = "GraveSampleDataSet"
-        Me.GraveSampleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'RetNameDGVBindingSource
-        '
-        Me.RetNameDGVBindingSource.DataMember = "RetNameDGV"
-        Me.RetNameDGVBindingSource.DataSource = Me.GraveSampleDataSet
-        '
-        'RetNameDGVTableAdapter
-        '
-        Me.RetNameDGVTableAdapter.ClearBeforeFill = True
-        '
-        'RetNameDGVTableAdapter1
-        '
-        Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
-        '
-        'GetDaPplTableAdapter
-        '
-        Me.GetDaPplTableAdapter.ClearBeforeFill = True
-        '
-        'Form1BindingSource
-        '
-        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
         '
         'FNameDataGridViewTextBoxColumn
         '
@@ -753,6 +718,52 @@ Partial Class Form1
         Me.CasketDataGridViewTextBoxColumn.DataPropertyName = "Casket"
         Me.CasketDataGridViewTextBoxColumn.HeaderText = "Casket"
         Me.CasketDataGridViewTextBoxColumn.Name = "CasketDataGridViewTextBoxColumn"
+        '
+        'GetDaPplBindingSource
+        '
+        Me.GetDaPplBindingSource.DataMember = "GetDaPpl"
+        Me.GetDaPplBindingSource.DataSource = Me.GraveSampleDataSet2
+        '
+        'GraveSampleDataSet2
+        '
+        Me.GraveSampleDataSet2.DataSetName = "GraveSampleDataSet2"
+        Me.GraveSampleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(346, 16)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(109, 25)
+        Me.Label17.TabIndex = 28
+        Me.Label17.Text = "Deceased"
+        '
+        'GraveSampleDataSet
+        '
+        Me.GraveSampleDataSet.DataSetName = "GraveSampleDataSet"
+        Me.GraveSampleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RetNameDGVBindingSource
+        '
+        Me.RetNameDGVBindingSource.DataMember = "RetNameDGV"
+        Me.RetNameDGVBindingSource.DataSource = Me.GraveSampleDataSet
+        '
+        'RetNameDGVTableAdapter
+        '
+        Me.RetNameDGVTableAdapter.ClearBeforeFill = True
+        '
+        'RetNameDGVTableAdapter1
+        '
+        Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
+        '
+        'GetDaPplTableAdapter
+        '
+        Me.GetDaPplTableAdapter.ClearBeforeFill = True
+        '
+        'Form1BindingSource
+        '
+        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
         '
         'Form1
         '
@@ -867,4 +878,5 @@ Partial Class Form1
     Friend WithEvents SexDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CasketDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btn_AddDec As Button
 End Class

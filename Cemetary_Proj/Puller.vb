@@ -265,4 +265,41 @@ Public Class Puller
     End Sub
 
 
+    Public Sub DeleteRecord(TitleID As Integer)
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "DeleteRecord"
+        Cmd.Parameters.Add(New SqlParameter("@TitID", TitleID))
+        PrimCom.Open()
+        Cmd.ExecuteNonQuery()
+        PrimCom.Close()
+
+    End Sub
+
+    Public Sub AddDec(
+        TitleID As String,
+        Fname As String,
+        Lname As String,
+        _Date As String,
+        Sex As String,
+        Age As String,
+        Position As String,
+        Casket As String)
+
+        Cmd.Parameters.Clear()
+        Cmd.CommandText = "AddDec"
+        Cmd.Parameters.Add(New SqlParameter("@Tit_ID", TitleID))
+        Cmd.Parameters.Add(New SqlParameter("@Fname", Fname))
+        Cmd.Parameters.Add(New SqlParameter("@Lname", Lname))
+        Cmd.Parameters.Add(New SqlParameter("@Date", _Date))
+        Cmd.Parameters.Add(New SqlParameter("@Sex", Sex))
+        Cmd.Parameters.Add(New SqlParameter("@Age", Age))
+        Cmd.Parameters.Add(New SqlParameter("@Position", Position))
+        Cmd.Parameters.Add(New SqlParameter("@Casket", Casket))
+        PrimCom.Open()
+        Cmd.ExecuteNonQuery()
+        PrimCom.Close()
+    End Sub
+
+
+
 End Class

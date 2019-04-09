@@ -38,13 +38,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button_Delete_Click(sender As Object, e As EventArgs) Handles Button_Delete.Click
 
-
-
-
-
-    End Sub
 
     Private Sub btnNewCard_Click(sender As Object, e As EventArgs) Handles btnNewCard.Click
         AddRecord.Show()
@@ -121,4 +115,30 @@ Public Class Form1
         dattab = FillObj.GetdaPpl(TID)
         DeceasedDGV.DataSource = dattab
     End Sub
+    Private Sub Button_Delete_Click(sender As Object, e As EventArgs) Handles Button_Delete.Click
+
+        If TxtBoxTitleNum.Text = Nothing Then
+            MessageBox.Show("Choose a Record to Delete")
+        Else
+            Dim TitleID As Integer = TxtBoxTitleNum.Text
+            Dim obj As New Puller
+            obj.DeleteRecord(TitleID)
+            MessageBox.Show("Record Deleted")
+        End If
+        SearchDGV.Refresh()
+
+    End Sub
+
+    Private Sub btn_AddDec_Click(sender As Object, e As EventArgs) Handles btn_AddDec.Click
+
+        If TxtBoxTitleNum.Text = Nothing Then
+            MessageBox.Show("Choose a Record")
+        Else
+            Add_Dec.Show()
+        End If
+
+
+    End Sub
+
+
 End Class
