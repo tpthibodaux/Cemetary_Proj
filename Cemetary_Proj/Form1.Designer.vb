@@ -23,9 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.lblTimeStamp = New System.Windows.Forms.Label()
         Me.lblAdmin = New System.Windows.Forms.Label()
-        Me.lblLastUpdate = New System.Windows.Forms.Label()
         Me.gbSearch = New System.Windows.Forms.GroupBox()
         Me.Button_Save = New System.Windows.Forms.Button()
         Me.Button_Delete = New System.Windows.Forms.Button()
@@ -48,15 +46,15 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TxtBoxTitleNum = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox_TitleHolder = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbLocation = New System.Windows.Forms.GroupBox()
+        Me.TextBox_Tier = New System.Windows.Forms.TextBox()
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.ComboBox_Phase = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -81,18 +79,23 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gbDeceased = New System.Windows.Forms.GroupBox()
+        Me.btn_AddDec = New System.Windows.Forms.Button()
         Me.DeceasedDGV = New System.Windows.Forms.DataGridView()
-        Me.Column_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameOfDeceased = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Position = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Casket = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AgeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CasketDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GetDaPplBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GraveSampleDataSet2 = New Cemetary_Proj.GraveSampleDataSet2()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GraveSampleDataSet = New Cemetary_Proj.GraveSampleDataSet()
         Me.RetNameDGVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RetNameDGVTableAdapter = New Cemetary_Proj.GraveSampleDataSetTableAdapters.RetNameDGVTableAdapter()
         Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
+        Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
         Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,38 +108,23 @@ Partial Class Form1
         Me.gbRemarks.SuspendLayout()
         Me.gbDeceased.SuspendLayout()
         CType(Me.DeceasedDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'lblTimeStamp
-        '
-        Me.lblTimeStamp.AutoSize = True
-        Me.lblTimeStamp.Location = New System.Drawing.Point(12, 1110)
-        Me.lblTimeStamp.Name = "lblTimeStamp"
-        Me.lblTimeStamp.Size = New System.Drawing.Size(0, 13)
-        Me.lblTimeStamp.TabIndex = 0
         '
         'lblAdmin
         '
         Me.lblAdmin.AutoSize = True
         Me.lblAdmin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdmin.Location = New System.Drawing.Point(9, 9)
+        Me.lblAdmin.Location = New System.Drawing.Point(23, 16)
         Me.lblAdmin.Name = "lblAdmin"
         Me.lblAdmin.Size = New System.Drawing.Size(53, 16)
         Me.lblAdmin.TabIndex = 1
         Me.lblAdmin.Text = "Admin?"
-        '
-        'lblLastUpdate
-        '
-        Me.lblLastUpdate.AutoSize = True
-        Me.lblLastUpdate.Location = New System.Drawing.Point(12, 1110)
-        Me.lblLastUpdate.Name = "lblLastUpdate"
-        Me.lblLastUpdate.Size = New System.Drawing.Size(166, 13)
-        Me.lblLastUpdate.TabIndex = 30
-        Me.lblLastUpdate.Text = "Last Updated 2/23/2019 7:26PM"
         '
         'gbSearch
         '
@@ -146,11 +134,12 @@ Partial Class Form1
         Me.gbSearch.Controls.Add(Me.Button_Search)
         Me.gbSearch.Controls.Add(Me.lblSearch)
         Me.gbSearch.Controls.Add(Me.btnNewCard)
+        Me.gbSearch.Controls.Add(Me.lblAdmin)
         Me.gbSearch.Controls.Add(Me.SearchDGV)
         Me.gbSearch.Controls.Add(Me.cbCemetery)
         Me.gbSearch.Controls.Add(Me.txtLN)
         Me.gbSearch.Controls.Add(Me.txtFN)
-        Me.gbSearch.Location = New System.Drawing.Point(12, 28)
+        Me.gbSearch.Location = New System.Drawing.Point(87, 25)
         Me.gbSearch.Name = "gbSearch"
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
@@ -162,7 +151,7 @@ Partial Class Form1
         Me.Button_Save.Name = "Button_Save"
         Me.Button_Save.Size = New System.Drawing.Size(151, 23)
         Me.Button_Save.TabIndex = 13
-        Me.Button_Save.Text = "Save Record"
+        Me.Button_Save.Text = "Edit Record"
         Me.Button_Save.UseVisualStyleBackColor = True
         '
         'Button_Delete
@@ -204,6 +193,8 @@ Partial Class Form1
         '
         'SearchDGV
         '
+        Me.SearchDGV.AllowUserToAddRows = False
+        Me.SearchDGV.AllowUserToDeleteRows = False
         Me.SearchDGV.AutoGenerateColumns = False
         Me.SearchDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SearchDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
@@ -291,15 +282,13 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.PictureBox1)
         Me.gbHistory.Controls.Add(Me.TextBox_Address)
         Me.gbHistory.Controls.Add(Me.TxtBoxTitleNum)
-        Me.gbHistory.Controls.Add(Me.TextBox2)
         Me.gbHistory.Controls.Add(Me.TextBox_TitleHolder)
         Me.gbHistory.Controls.Add(Me.Label6)
         Me.gbHistory.Controls.Add(Me.Label5)
-        Me.gbHistory.Controls.Add(Me.Label4)
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
-        Me.gbHistory.Location = New System.Drawing.Point(12, 272)
+        Me.gbHistory.Location = New System.Drawing.Point(87, 278)
         Me.gbHistory.Name = "gbHistory"
         Me.gbHistory.Size = New System.Drawing.Size(867, 216)
         Me.gbHistory.TabIndex = 32
@@ -310,6 +299,7 @@ Partial Class Form1
         Me.MaskedTextBox_DateIssued.Location = New System.Drawing.Point(770, 50)
         Me.MaskedTextBox_DateIssued.Mask = "00/00/0000"
         Me.MaskedTextBox_DateIssued.Name = "MaskedTextBox_DateIssued"
+        Me.MaskedTextBox_DateIssued.ReadOnly = True
         Me.MaskedTextBox_DateIssued.Size = New System.Drawing.Size(71, 20)
         Me.MaskedTextBox_DateIssued.TabIndex = 23
         Me.MaskedTextBox_DateIssued.ValidatingType = GetType(Date)
@@ -326,34 +316,29 @@ Partial Class Form1
         '
         'TextBox_Address
         '
-        Me.TextBox_Address.Location = New System.Drawing.Point(367, 138)
+        Me.TextBox_Address.Location = New System.Drawing.Point(367, 95)
         Me.TextBox_Address.Multiline = True
         Me.TextBox_Address.Name = "TextBox_Address"
+        Me.TextBox_Address.ReadOnly = True
         Me.TextBox_Address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox_Address.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_Address.TabIndex = 19
         '
         'TxtBoxTitleNum
         '
+        Me.TxtBoxTitleNum.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.TxtBoxTitleNum.Location = New System.Drawing.Point(770, 94)
         Me.TxtBoxTitleNum.Name = "TxtBoxTitleNum"
+        Me.TxtBoxTitleNum.ReadOnly = True
         Me.TxtBoxTitleNum.Size = New System.Drawing.Size(71, 20)
         Me.TxtBoxTitleNum.TabIndex = 18
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(367, 94)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(240, 40)
-        Me.TextBox2.TabIndex = 16
         '
         'TextBox_TitleHolder
         '
         Me.TextBox_TitleHolder.Location = New System.Drawing.Point(367, 49)
         Me.TextBox_TitleHolder.Multiline = True
         Me.TextBox_TitleHolder.Name = "TextBox_TitleHolder"
+        Me.TextBox_TitleHolder.ReadOnly = True
         Me.TextBox_TitleHolder.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_TitleHolder.TabIndex = 15
         '
@@ -371,21 +356,11 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(299, 139)
+        Me.Label5.Location = New System.Drawing.Point(299, 94)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 16)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Address:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(278, 95)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 16)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Title Owners:"
         '
         'Label3
         '
@@ -417,9 +392,20 @@ Partial Class Form1
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "History of Ownership"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(315, 71)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(35, 16)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Tier:"
+        '
         'gbLocation
         '
         Me.gbLocation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbLocation.Controls.Add(Me.TextBox_Tier)
         Me.gbLocation.Controls.Add(Me.VScrollBar1)
         Me.gbLocation.Controls.Add(Me.ComboBox_Phase)
         Me.gbLocation.Controls.Add(Me.Label13)
@@ -427,6 +413,7 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.TextBox_LotNum)
         Me.gbLocation.Controls.Add(Me.TextBox_TypeMemorial)
         Me.gbLocation.Controls.Add(Me.TextBox_Section)
+        Me.gbLocation.Controls.Add(Me.Label4)
         Me.gbLocation.Controls.Add(Me.TextBox_Cemetery)
         Me.gbLocation.Controls.Add(Me.TextBox_NameOnMemor)
         Me.gbLocation.Controls.Add(Me.Label7)
@@ -435,11 +422,19 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
-        Me.gbLocation.Location = New System.Drawing.Point(12, 494)
+        Me.gbLocation.Location = New System.Drawing.Point(87, 511)
         Me.gbLocation.Name = "gbLocation"
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
         Me.gbLocation.TabStop = False
+        '
+        'TextBox_Tier
+        '
+        Me.TextBox_Tier.Location = New System.Drawing.Point(355, 71)
+        Me.TextBox_Tier.Name = "TextBox_Tier"
+        Me.TextBox_Tier.ReadOnly = True
+        Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Tier.TabIndex = 25
         '
         'VScrollBar1
         '
@@ -480,6 +475,7 @@ Partial Class Form1
         '
         Me.TextBox_LotNum.Location = New System.Drawing.Point(209, 131)
         Me.TextBox_LotNum.Name = "TextBox_LotNum"
+        Me.TextBox_LotNum.ReadOnly = True
         Me.TextBox_LotNum.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_LotNum.TabIndex = 19
         '
@@ -487,6 +483,7 @@ Partial Class Form1
         '
         Me.TextBox_TypeMemorial.Location = New System.Drawing.Point(209, 159)
         Me.TextBox_TypeMemorial.Name = "TextBox_TypeMemorial"
+        Me.TextBox_TypeMemorial.ReadOnly = True
         Me.TextBox_TypeMemorial.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_TypeMemorial.TabIndex = 18
         '
@@ -494,6 +491,7 @@ Partial Class Form1
         '
         Me.TextBox_Section.Location = New System.Drawing.Point(209, 101)
         Me.TextBox_Section.Name = "TextBox_Section"
+        Me.TextBox_Section.ReadOnly = True
         Me.TextBox_Section.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Section.TabIndex = 17
         '
@@ -501,6 +499,7 @@ Partial Class Form1
         '
         Me.TextBox_Cemetery.Location = New System.Drawing.Point(209, 72)
         Me.TextBox_Cemetery.Name = "TextBox_Cemetery"
+        Me.TextBox_Cemetery.ReadOnly = True
         Me.TextBox_Cemetery.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Cemetery.TabIndex = 16
         '
@@ -509,6 +508,7 @@ Partial Class Form1
         Me.TextBox_NameOnMemor.Location = New System.Drawing.Point(209, 45)
         Me.TextBox_NameOnMemor.Multiline = True
         Me.TextBox_NameOnMemor.Name = "TextBox_NameOnMemor"
+        Me.TextBox_NameOnMemor.ReadOnly = True
         Me.TextBox_NameOnMemor.Size = New System.Drawing.Size(246, 20)
         Me.TextBox_NameOnMemor.TabIndex = 15
         '
@@ -581,7 +581,7 @@ Partial Class Form1
         Me.gbRemarks.Controls.Add(Me.TextBox_Desc)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
-        Me.gbRemarks.Location = New System.Drawing.Point(12, 754)
+        Me.gbRemarks.Location = New System.Drawing.Point(87, 756)
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(867, 96)
         Me.gbRemarks.TabIndex = 34
@@ -609,6 +609,7 @@ Partial Class Form1
         '
         Me.TextBox_Price.Location = New System.Drawing.Point(424, 62)
         Me.TextBox_Price.Name = "TextBox_Price"
+        Me.TextBox_Price.ReadOnly = True
         Me.TextBox_Price.Size = New System.Drawing.Size(85, 20)
         Me.TextBox_Price.TabIndex = 26
         '
@@ -627,6 +628,7 @@ Partial Class Form1
         Me.TextBox_Desc.Location = New System.Drawing.Point(121, 50)
         Me.TextBox_Desc.Multiline = True
         Me.TextBox_Desc.Name = "TextBox_Desc"
+        Me.TextBox_Desc.ReadOnly = True
         Me.TextBox_Desc.Size = New System.Drawing.Size(240, 40)
         Me.TextBox_Desc.TabIndex = 24
         '
@@ -652,57 +654,93 @@ Partial Class Form1
         '
         'gbDeceased
         '
+        Me.gbDeceased.Controls.Add(Me.btn_AddDec)
         Me.gbDeceased.Controls.Add(Me.DeceasedDGV)
         Me.gbDeceased.Controls.Add(Me.Label17)
-        Me.gbDeceased.Location = New System.Drawing.Point(15, 872)
+        Me.gbDeceased.Location = New System.Drawing.Point(87, 858)
         Me.gbDeceased.Name = "gbDeceased"
         Me.gbDeceased.Size = New System.Drawing.Size(867, 227)
         Me.gbDeceased.TabIndex = 35
         Me.gbDeceased.TabStop = False
         '
+        'btn_AddDec
+        '
+        Me.btn_AddDec.Location = New System.Drawing.Point(715, 19)
+        Me.btn_AddDec.Name = "btn_AddDec"
+        Me.btn_AddDec.Size = New System.Drawing.Size(130, 25)
+        Me.btn_AddDec.TabIndex = 30
+        Me.btn_AddDec.Text = "Add Deceased"
+        Me.btn_AddDec.UseVisualStyleBackColor = True
+        '
         'DeceasedDGV
         '
+        Me.DeceasedDGV.AllowUserToAddRows = False
+        Me.DeceasedDGV.AllowUserToDeleteRows = False
+        Me.DeceasedDGV.AutoGenerateColumns = False
         Me.DeceasedDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DeceasedDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column_Date, Me.NameOfDeceased, Me.Sex, Me.Age, Me.Position, Me.Casket})
-        Me.DeceasedDGV.Location = New System.Drawing.Point(6, 50)
+        Me.DeceasedDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FNameDataGridViewTextBoxColumn, Me.LNameDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.AgeDataGridViewTextBoxColumn, Me.SexDataGridViewTextBoxColumn, Me.PositionDataGridViewTextBoxColumn, Me.CasketDataGridViewTextBoxColumn})
+        Me.DeceasedDGV.DataSource = Me.GetDaPplBindingSource
+        Me.DeceasedDGV.Location = New System.Drawing.Point(20, 50)
         Me.DeceasedDGV.Name = "DeceasedDGV"
-        Me.DeceasedDGV.Size = New System.Drawing.Size(855, 171)
+        Me.DeceasedDGV.Size = New System.Drawing.Size(841, 171)
         Me.DeceasedDGV.TabIndex = 29
         '
-        'Column_Date
+        'FNameDataGridViewTextBoxColumn
         '
-        Me.Column_Date.HeaderText = "Date"
-        Me.Column_Date.Name = "Column_Date"
-        Me.Column_Date.Width = 75
+        Me.FNameDataGridViewTextBoxColumn.DataPropertyName = "FName"
+        Me.FNameDataGridViewTextBoxColumn.HeaderText = "FName"
+        Me.FNameDataGridViewTextBoxColumn.Name = "FNameDataGridViewTextBoxColumn"
+        Me.FNameDataGridViewTextBoxColumn.Width = 150
         '
-        'NameOfDeceased
+        'LNameDataGridViewTextBoxColumn
         '
-        Me.NameOfDeceased.HeaderText = "Name of Deceased"
-        Me.NameOfDeceased.Name = "NameOfDeceased"
-        Me.NameOfDeceased.Width = 467
+        Me.LNameDataGridViewTextBoxColumn.DataPropertyName = "LName"
+        Me.LNameDataGridViewTextBoxColumn.HeaderText = "LName"
+        Me.LNameDataGridViewTextBoxColumn.Name = "LNameDataGridViewTextBoxColumn"
+        Me.LNameDataGridViewTextBoxColumn.Width = 150
         '
-        'Sex
+        'DateDataGridViewTextBoxColumn
         '
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.Width = 35
+        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "Date"
+        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
+        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
+        Me.DateDataGridViewTextBoxColumn.Width = 200
         '
-        'Age
+        'AgeDataGridViewTextBoxColumn
         '
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.Width = 35
+        Me.AgeDataGridViewTextBoxColumn.DataPropertyName = "Age"
+        Me.AgeDataGridViewTextBoxColumn.HeaderText = "Age"
+        Me.AgeDataGridViewTextBoxColumn.Name = "AgeDataGridViewTextBoxColumn"
+        Me.AgeDataGridViewTextBoxColumn.Width = 50
         '
-        'Position
+        'SexDataGridViewTextBoxColumn
         '
-        Me.Position.HeaderText = "Position"
-        Me.Position.Name = "Position"
+        Me.SexDataGridViewTextBoxColumn.DataPropertyName = "Sex"
+        Me.SexDataGridViewTextBoxColumn.HeaderText = "Sex"
+        Me.SexDataGridViewTextBoxColumn.Name = "SexDataGridViewTextBoxColumn"
+        Me.SexDataGridViewTextBoxColumn.Width = 50
         '
-        'Casket
+        'PositionDataGridViewTextBoxColumn
         '
-        Me.Casket.HeaderText = "Casket"
-        Me.Casket.Name = "Casket"
-        Me.Casket.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PositionDataGridViewTextBoxColumn.DataPropertyName = "Position"
+        Me.PositionDataGridViewTextBoxColumn.HeaderText = "Position"
+        Me.PositionDataGridViewTextBoxColumn.Name = "PositionDataGridViewTextBoxColumn"
+        '
+        'CasketDataGridViewTextBoxColumn
+        '
+        Me.CasketDataGridViewTextBoxColumn.DataPropertyName = "Casket"
+        Me.CasketDataGridViewTextBoxColumn.HeaderText = "Casket"
+        Me.CasketDataGridViewTextBoxColumn.Name = "CasketDataGridViewTextBoxColumn"
+        '
+        'GetDaPplBindingSource
+        '
+        Me.GetDaPplBindingSource.DataMember = "GetDaPpl"
+        Me.GetDaPplBindingSource.DataSource = Me.GraveSampleDataSet2
+        '
+        'GraveSampleDataSet2
+        '
+        Me.GraveSampleDataSet2.DataSetName = "GraveSampleDataSet2"
+        Me.GraveSampleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label17
         '
@@ -732,6 +770,10 @@ Partial Class Form1
         '
         Me.RetNameDGVTableAdapter1.ClearBeforeFill = True
         '
+        'GetDaPplTableAdapter
+        '
+        Me.GetDaPplTableAdapter.ClearBeforeFill = True
+        '
         'Form1BindingSource
         '
         Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
@@ -744,15 +786,12 @@ Partial Class Form1
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(980, 698)
+        Me.ClientSize = New System.Drawing.Size(1068, 698)
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
         Me.Controls.Add(Me.gbHistory)
         Me.Controls.Add(Me.gbSearch)
-        Me.Controls.Add(Me.lblLastUpdate)
-        Me.Controls.Add(Me.lblAdmin)
-        Me.Controls.Add(Me.lblTimeStamp)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.gbSearch.ResumeLayout(False)
@@ -771,17 +810,15 @@ Partial Class Form1
         Me.gbDeceased.ResumeLayout(False)
         Me.gbDeceased.PerformLayout()
         CType(Me.DeceasedDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GetDaPplBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblTimeStamp As Label
     Friend WithEvents lblAdmin As Label
-    Friend WithEvents lblLastUpdate As Label
     Friend WithEvents gbSearch As GroupBox
     Friend WithEvents lblSearch As Label
     Friend WithEvents btnNewCard As Button
@@ -794,7 +831,6 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox_Address As TextBox
     Friend WithEvents TxtBoxTitleNum As TextBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox_TitleHolder As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -827,12 +863,6 @@ Partial Class Form1
     Friend WithEvents Label14 As Label
     Friend WithEvents gbDeceased As GroupBox
     Friend WithEvents DeceasedDGV As DataGridView
-    Friend WithEvents Column_Date As DataGridViewTextBoxColumn
-    Friend WithEvents NameOfDeceased As DataGridViewTextBoxColumn
-    Friend WithEvents Sex As DataGridViewTextBoxColumn
-    Friend WithEvents Age As DataGridViewTextBoxColumn
-    Friend WithEvents Position As DataGridViewTextBoxColumn
-    Friend WithEvents Casket As DataGridViewTextBoxColumn
     Friend WithEvents Label17 As Label
     Friend WithEvents Button_Delete As Button
     Friend WithEvents Button_Search As Button
@@ -850,4 +880,16 @@ Partial Class Form1
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Suffix As DataGridViewTextBoxColumn
     Friend WithEvents CemeteryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GetDaPplBindingSource As BindingSource
+    Friend WithEvents GraveSampleDataSet2 As GraveSampleDataSet2
+    Friend WithEvents GetDaPplTableAdapter As GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter
+    Friend WithEvents TextBox_Tier As TextBox
+    Friend WithEvents FNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AgeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SexDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CasketDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btn_AddDec As Button
 End Class

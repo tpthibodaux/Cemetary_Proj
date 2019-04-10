@@ -74,6 +74,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRecord.Designer.vb">
+      <DependentUpon>AddRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Dec.Designer.vb">
+      <DependentUpon>Add_Dec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Dec.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GraveSampleDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GraveSampleDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraveSampleDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,8 +123,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Puller.vb" />
+    <Compile Include="SpecInfo.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddRecord.resx">
+      <DependentUpon>AddRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Dec.resx">
+      <DependentUpon>Add_Dec.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +165,17 @@
     </None>
     <None Include="GraveSampleDataSet1.xss">
       <DependentUpon>GraveSampleDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GraveSampleDataSet2.xsc">
+      <DependentUpon>GraveSampleDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GraveSampleDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GraveSampleDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GraveSampleDataSet2.xss">
+      <DependentUpon>GraveSampleDataSet2.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
