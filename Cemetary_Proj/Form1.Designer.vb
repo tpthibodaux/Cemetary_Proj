@@ -139,7 +139,7 @@ Partial Class Form1
         Me.gbSearch.Controls.Add(Me.cbCemetery)
         Me.gbSearch.Controls.Add(Me.txtLN)
         Me.gbSearch.Controls.Add(Me.txtFN)
-        Me.gbSearch.Location = New System.Drawing.Point(102, 12)
+        Me.gbSearch.Location = New System.Drawing.Point(87, 25)
         Me.gbSearch.Name = "gbSearch"
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
@@ -151,7 +151,7 @@ Partial Class Form1
         Me.Button_Save.Name = "Button_Save"
         Me.Button_Save.Size = New System.Drawing.Size(151, 23)
         Me.Button_Save.TabIndex = 13
-        Me.Button_Save.Text = "Save Record"
+        Me.Button_Save.Text = "Edit Record"
         Me.Button_Save.UseVisualStyleBackColor = True
         '
         'Button_Delete
@@ -288,7 +288,7 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
-        Me.gbHistory.Location = New System.Drawing.Point(102, 265)
+        Me.gbHistory.Location = New System.Drawing.Point(87, 278)
         Me.gbHistory.Name = "gbHistory"
         Me.gbHistory.Size = New System.Drawing.Size(867, 216)
         Me.gbHistory.TabIndex = 32
@@ -422,7 +422,7 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
-        Me.gbLocation.Location = New System.Drawing.Point(102, 498)
+        Me.gbLocation.Location = New System.Drawing.Point(87, 511)
         Me.gbLocation.Name = "gbLocation"
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
@@ -581,7 +581,7 @@ Partial Class Form1
         Me.gbRemarks.Controls.Add(Me.TextBox_Desc)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
-        Me.gbRemarks.Location = New System.Drawing.Point(102, 743)
+        Me.gbRemarks.Location = New System.Drawing.Point(87, 756)
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(867, 96)
         Me.gbRemarks.TabIndex = 34
@@ -657,7 +657,7 @@ Partial Class Form1
         Me.gbDeceased.Controls.Add(Me.btn_AddDec)
         Me.gbDeceased.Controls.Add(Me.DeceasedDGV)
         Me.gbDeceased.Controls.Add(Me.Label17)
-        Me.gbDeceased.Location = New System.Drawing.Point(102, 845)
+        Me.gbDeceased.Location = New System.Drawing.Point(87, 858)
         Me.gbDeceased.Name = "gbDeceased"
         Me.gbDeceased.Size = New System.Drawing.Size(867, 227)
         Me.gbDeceased.TabIndex = 35
