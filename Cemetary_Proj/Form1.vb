@@ -140,5 +140,47 @@ Public Class Form1
 
     End Sub
 
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
 
+    End Sub
+
+    Private Sub btn_UploadFile_Click(sender As Object, e As EventArgs) Handles btn_UploadFile.Click
+        If TxtBoxTitleNum.Text = Nothing Then
+            MessageBox.Show("Choose a Record")
+        Else
+            Form_FileUpload.Show()
+        End If
+    End Sub
+
+    Private Sub btnViewDocs_Click(sender As Object, e As EventArgs) Handles btnViewDocs.Click
+        If TxtBoxTitleNum.Text = Nothing Then
+            MessageBox.Show("Choose a Record")
+        Else
+            Form_ViewFiles.Show()
+        End If
+    End Sub
+
+    Private Sub DeceasedDGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DeceasedDGV.CellContentClick
+
+    End Sub
+
+    Private Sub gbDeceased_Enter(sender As Object, e As EventArgs) Handles gbDeceased.Enter
+
+    End Sub
+
+    Private Sub gbRemarks_Enter(sender As Object, e As EventArgs) Handles gbRemarks.Enter
+
+    End Sub
+
+    Private Sub gbLocation_Enter(sender As Object, e As EventArgs) Handles gbLocation.Enter
+
+    End Sub
+
+    Private Sub gbHistory_Enter(sender As Object, e As EventArgs) Handles gbHistory.Enter
+
+    End Sub
+
+    Private Sub gbSearch_Enter(sender As Object, e As EventArgs) Handles gbSearch.Enter
+
+    End Sub
 End Class
