@@ -3,7 +3,6 @@
         Me.Close()
     End Sub
 
-
     Private Sub AddRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim DS As New DataSet
@@ -22,6 +21,8 @@
         ''Sets the format for the date
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "dd/MM/yyyy"
+
+        Me.ActiveControl = Label6
 
 
     End Sub
@@ -101,5 +102,70 @@
         Me.Close()
     End Sub
 
+
+    Private Sub txtFN_AddRec1_GotFocus() Handles txtFN_AddRec1.GotFocus
+        txtFN_AddRec1.Text = ""
+    End Sub
+
+    Private Sub txtFN_AddRec2_GotFocus() Handles txtFN_AddRec2.GotFocus
+        txtFN_AddRec2.Text = ""
+    End Sub
+
+    Private Sub txtFN_AddRec3_GotFocus() Handles txtFN_AddRec3.GotFocus
+        txtFN_AddRec3.Text = ""
+    End Sub
+
+    Private Sub txtFN_AddRec4_GotFocus() Handles txtFN_AddRec4.GotFocus
+        txtFN_AddRec4.Text = ""
+    End Sub
+
+
+    Private Sub txt_MI_AddRec1_GotFocus() Handles txt_MI_AddRec1.GotFocus
+        txt_MI_AddRec1.Text = ""
+    End Sub
+
+    Private Sub txt_MI_AddRec2_GotFocus() Handles txt_MI_AddRec2.GotFocus
+        txt_MI_AddRec2.Text = ""
+    End Sub
+
+    Private Sub txt_MI_AddRec3_GotFocus() Handles txt_MI_AddRec3.GotFocus
+        txt_MI_AddRec3.Text = ""
+    End Sub
+
+    Private Sub txt_MI_AddRec4_GotFocus() Handles txt_MI_AddRec4.GotFocus
+        txt_MI_AddRec4.Text = ""
+    End Sub
+
+    Private Sub txtLN_AddRec1_GotFocus() Handles txtLN_AddRec1.GotFocus
+        txtLN_AddRec1.Text = ""
+    End Sub
+
+    Private Sub txtLN_AddRec2_GotFocus() Handles txtLN_AddRec2.GotFocus
+        txtLN_AddRec2.Text = ""
+    End Sub
+
+    Private Sub txtLN_AddRec3_GotFocus() Handles txtLN_AddRec3.GotFocus
+        txtLN_AddRec3.Text = ""
+    End Sub
+
+    Private Sub txtLN_AddRec4_GotFocus() Handles txtLN_AddRec4.GotFocus
+        txtLN_AddRec4.Text = ""
+    End Sub
+
+    Private Sub txtSuf1_GotFocus() Handles txtSuf1.GotFocus
+        txtSuf1.Text = ""
+    End Sub
+
+    Private Sub txtSuf2_GotFocus() Handles txtSuf2.GotFocus
+        txtSuf2.Text = ""
+    End Sub
+
+    Private Sub txtSuf3_GotFocus() Handles txtSuf3.GotFocus
+        txtSuf3.Text = ""
+    End Sub
+
+    Private Sub txtSuf4_GotFocus() Handles txtSuf4.GotFocus
+        txtSuf4.Text = ""
+    End Sub
 
 End Class

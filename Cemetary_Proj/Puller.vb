@@ -9,7 +9,7 @@ Public Class Puller
 
     Public Sub New()
 
-        PrimCom.ConnectionString = "Data Source=DESKTOP-A6SIUJP\SQLEXPRESS;Initial Catalog=GraveSample;Integrated Security=True"
+        PrimCom.ConnectionString = "Data Source=.;Initial Catalog=GraveSample;Integrated Security=True"
         Cmd.Connection = PrimCom
         Cmd.CommandType = CommandType.StoredProcedure
     End Sub

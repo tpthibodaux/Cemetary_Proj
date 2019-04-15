@@ -80,34 +80,34 @@ Partial Class AddRecord
         '
         'Button_Add
         '
-        Me.Button_Add.Location = New System.Drawing.Point(232, 376)
+        Me.Button_Add.Location = New System.Drawing.Point(141, 370)
         Me.Button_Add.Name = "Button_Add"
-        Me.Button_Add.Size = New System.Drawing.Size(107, 28)
-        Me.Button_Add.TabIndex = 0
+        Me.Button_Add.Size = New System.Drawing.Size(130, 23)
+        Me.Button_Add.TabIndex = 29
         Me.Button_Add.Text = "Add Record"
         Me.Button_Add.UseVisualStyleBackColor = True
         '
         'Button_Can
         '
-        Me.Button_Can.Location = New System.Drawing.Point(452, 376)
+        Me.Button_Can.Location = New System.Drawing.Point(412, 370)
         Me.Button_Can.Name = "Button_Can"
-        Me.Button_Can.Size = New System.Drawing.Size(107, 28)
-        Me.Button_Can.TabIndex = 1
+        Me.Button_Can.Size = New System.Drawing.Size(130, 23)
+        Me.Button_Can.TabIndex = 30
         Me.Button_Can.Text = "Cancel"
         Me.Button_Can.UseVisualStyleBackColor = True
         '
         'TextBox_Tier_AddRec
         '
-        Me.TextBox_Tier_AddRec.Location = New System.Drawing.Point(457, 279)
+        Me.TextBox_Tier_AddRec.Location = New System.Drawing.Point(287, 273)
         Me.TextBox_Tier_AddRec.Name = "TextBox_Tier_AddRec"
         Me.TextBox_Tier_AddRec.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Tier_AddRec.TabIndex = 39
+        Me.TextBox_Tier_AddRec.TabIndex = 22
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(85, 284)
+        Me.Label13.Location = New System.Drawing.Point(85, 273)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(50, 16)
         Me.Label13.TabIndex = 37
@@ -117,7 +117,7 @@ Partial Class AddRecord
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(416, 282)
+        Me.Label4.Location = New System.Drawing.Point(246, 274)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(35, 16)
         Me.Label4.TabIndex = 28
@@ -129,13 +129,13 @@ Partial Class AddRecord
         Me.TextBox_NameOnMemor_AddRec.Multiline = True
         Me.TextBox_NameOnMemor_AddRec.Name = "TextBox_NameOnMemor_AddRec"
         Me.TextBox_NameOnMemor_AddRec.Size = New System.Drawing.Size(246, 20)
-        Me.TextBox_NameOnMemor_AddRec.TabIndex = 32
+        Me.TextBox_NameOnMemor_AddRec.TabIndex = 17
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(55, 228)
+        Me.Label7.Location = New System.Drawing.Point(55, 221)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 16)
         Me.Label7.TabIndex = 31
@@ -145,7 +145,7 @@ Partial Class AddRecord
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(19, 258)
+        Me.Label8.Location = New System.Drawing.Point(19, 250)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 16)
         Me.Label8.TabIndex = 30
@@ -178,7 +178,7 @@ Partial Class AddRecord
         Me.cbCemetery_AddRec.Location = New System.Drawing.Point(141, 134)
         Me.cbCemetery_AddRec.Name = "cbCemetery_AddRec"
         Me.cbCemetery_AddRec.Size = New System.Drawing.Size(212, 21)
-        Me.cbCemetery_AddRec.TabIndex = 40
+        Me.cbCemetery_AddRec.TabIndex = 16
         Me.cbCemetery_AddRec.Text = "- -"
         '
         'Label1
@@ -251,16 +251,16 @@ Partial Class AddRecord
         '
         'txtPrice
         '
-        Me.txtPrice.Location = New System.Drawing.Point(457, 250)
+        Me.txtPrice.Location = New System.Drawing.Point(452, 245)
         Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(60, 20)
-        Me.txtPrice.TabIndex = 85
+        Me.txtPrice.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrice.TabIndex = 27
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(409, 250)
+        Me.Label23.Location = New System.Drawing.Point(409, 246)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(42, 16)
         Me.Label23.TabIndex = 84
@@ -270,7 +270,7 @@ Partial Class AddRecord
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(55, 351)
+        Me.Label22.Location = New System.Drawing.Point(56, 327)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(79, 16)
         Me.Label22.TabIndex = 83
@@ -278,45 +278,46 @@ Partial Class AddRecord
         '
         'txtDesc
         '
-        Me.txtDesc.Location = New System.Drawing.Point(141, 350)
+        Me.txtDesc.Location = New System.Drawing.Point(141, 327)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(511, 20)
-        Me.txtDesc.TabIndex = 82
+        Me.txtDesc.TabIndex = 28
         '
         'txtPhase
         '
-        Me.txtPhase.Location = New System.Drawing.Point(141, 280)
+        Me.txtPhase.Location = New System.Drawing.Point(141, 272)
         Me.txtPhase.Name = "txtPhase"
         Me.txtPhase.Size = New System.Drawing.Size(60, 20)
-        Me.txtPhase.TabIndex = 80
+        Me.txtPhase.TabIndex = 21
         '
         'txtMem
         '
-        Me.txtMem.Location = New System.Drawing.Point(141, 254)
+        Me.txtMem.Location = New System.Drawing.Point(141, 246)
         Me.txtMem.Name = "txtMem"
         Me.txtMem.Size = New System.Drawing.Size(246, 20)
-        Me.txtMem.TabIndex = 77
+        Me.txtMem.TabIndex = 20
         '
         'txtLotNum
         '
-        Me.txtLotNum.Location = New System.Drawing.Point(141, 228)
+        Me.txtLotNum.Location = New System.Drawing.Point(141, 220)
         Me.txtLotNum.Name = "txtLotNum"
         Me.txtLotNum.Size = New System.Drawing.Size(60, 20)
-        Me.txtLotNum.TabIndex = 76
+        Me.txtLotNum.TabIndex = 19
         '
         'txtSection
         '
         Me.txtSection.Location = New System.Drawing.Point(141, 194)
         Me.txtSection.Name = "txtSection"
         Me.txtSection.Size = New System.Drawing.Size(60, 20)
-        Me.txtSection.TabIndex = 74
+        Me.txtSection.TabIndex = 18
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(452, 135)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 73
+        Me.DateTimePicker2.TabIndex = 17
+        Me.DateTimePicker2.Value = New Date(2019, 4, 13, 18, 0, 19, 0)
         '
         'Label17
         '
@@ -332,7 +333,7 @@ Partial Class AddRecord
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(73, 316)
+        Me.Label16.Location = New System.Drawing.Point(73, 301)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 16)
         Me.Label16.TabIndex = 69
@@ -340,16 +341,16 @@ Partial Class AddRecord
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(141, 316)
+        Me.txtAddress.Location = New System.Drawing.Point(141, 300)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(179, 20)
-        Me.txtAddress.TabIndex = 68
+        Me.txtAddress.Size = New System.Drawing.Size(246, 20)
+        Me.txtAddress.TabIndex = 23
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(421, 223)
+        Me.Label15.Location = New System.Drawing.Point(421, 220)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(30, 16)
         Me.Label15.TabIndex = 67
@@ -357,16 +358,16 @@ Partial Class AddRecord
         '
         'txtZip
         '
-        Me.txtZip.Location = New System.Drawing.Point(457, 219)
+        Me.txtZip.Location = New System.Drawing.Point(452, 219)
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(100, 20)
-        Me.txtZip.TabIndex = 66
+        Me.txtZip.TabIndex = 26
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(409, 197)
+        Me.Label14.Location = New System.Drawing.Point(409, 194)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(42, 16)
         Me.Label14.TabIndex = 65
@@ -376,7 +377,7 @@ Partial Class AddRecord
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(418, 170)
+        Me.Label12.Location = New System.Drawing.Point(418, 167)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(33, 16)
         Me.Label12.TabIndex = 64
@@ -384,24 +385,24 @@ Partial Class AddRecord
         '
         'txtState
         '
-        Me.txtState.Location = New System.Drawing.Point(457, 193)
+        Me.txtState.Location = New System.Drawing.Point(452, 193)
         Me.txtState.Name = "txtState"
         Me.txtState.Size = New System.Drawing.Size(100, 20)
-        Me.txtState.TabIndex = 63
+        Me.txtState.TabIndex = 25
         '
         'txt_City
         '
-        Me.txt_City.Location = New System.Drawing.Point(457, 166)
+        Me.txt_City.Location = New System.Drawing.Point(452, 166)
         Me.txt_City.Name = "txt_City"
         Me.txt_City.Size = New System.Drawing.Size(100, 20)
-        Me.txt_City.TabIndex = 62
+        Me.txt_City.TabIndex = 24
         '
         'txtSuf4
         '
         Me.txtSuf4.Location = New System.Drawing.Point(412, 108)
         Me.txtSuf4.Name = "txtSuf4"
         Me.txtSuf4.Size = New System.Drawing.Size(29, 20)
-        Me.txtSuf4.TabIndex = 61
+        Me.txtSuf4.TabIndex = 15
         Me.txtSuf4.Text = "Suf"
         '
         'txtSuf3
@@ -409,7 +410,7 @@ Partial Class AddRecord
         Me.txtSuf3.Location = New System.Drawing.Point(412, 82)
         Me.txtSuf3.Name = "txtSuf3"
         Me.txtSuf3.Size = New System.Drawing.Size(29, 20)
-        Me.txtSuf3.TabIndex = 60
+        Me.txtSuf3.TabIndex = 11
         Me.txtSuf3.Text = "Suf"
         '
         'txtSuf2
@@ -417,7 +418,7 @@ Partial Class AddRecord
         Me.txtSuf2.Location = New System.Drawing.Point(412, 56)
         Me.txtSuf2.Name = "txtSuf2"
         Me.txtSuf2.Size = New System.Drawing.Size(29, 20)
-        Me.txtSuf2.TabIndex = 59
+        Me.txtSuf2.TabIndex = 7
         Me.txtSuf2.Text = "Suf"
         '
         'txtSuf1
@@ -425,7 +426,7 @@ Partial Class AddRecord
         Me.txtSuf1.Location = New System.Drawing.Point(412, 30)
         Me.txtSuf1.Name = "txtSuf1"
         Me.txtSuf1.Size = New System.Drawing.Size(29, 20)
-        Me.txtSuf1.TabIndex = 58
+        Me.txtSuf1.TabIndex = 3
         Me.txtSuf1.Text = "Suf"
         '
         'Label6
@@ -473,15 +474,16 @@ Partial Class AddRecord
         Me.txt_MI_AddRec4.Location = New System.Drawing.Point(260, 108)
         Me.txt_MI_AddRec4.Name = "txt_MI_AddRec4"
         Me.txt_MI_AddRec4.Size = New System.Drawing.Size(29, 20)
-        Me.txt_MI_AddRec4.TabIndex = 53
-        Me.txt_MI_AddRec4.Text = "M/I"
+        Me.txt_MI_AddRec4.TabIndex = 13
+        Me.txt_MI_AddRec4.Text = "M"
+        Me.txt_MI_AddRec4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLN_AddRec4
         '
         Me.txtLN_AddRec4.Location = New System.Drawing.Point(295, 108)
         Me.txtLN_AddRec4.Name = "txtLN_AddRec4"
         Me.txtLN_AddRec4.Size = New System.Drawing.Size(111, 20)
-        Me.txtLN_AddRec4.TabIndex = 52
+        Me.txtLN_AddRec4.TabIndex = 14
         Me.txtLN_AddRec4.Text = "Last Name"
         Me.txtLN_AddRec4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -490,7 +492,7 @@ Partial Class AddRecord
         Me.txtFN_AddRec4.Location = New System.Drawing.Point(141, 108)
         Me.txtFN_AddRec4.Name = "txtFN_AddRec4"
         Me.txtFN_AddRec4.Size = New System.Drawing.Size(111, 20)
-        Me.txtFN_AddRec4.TabIndex = 51
+        Me.txtFN_AddRec4.TabIndex = 12
         Me.txtFN_AddRec4.Text = "First Name"
         Me.txtFN_AddRec4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -499,15 +501,16 @@ Partial Class AddRecord
         Me.txt_MI_AddRec3.Location = New System.Drawing.Point(260, 82)
         Me.txt_MI_AddRec3.Name = "txt_MI_AddRec3"
         Me.txt_MI_AddRec3.Size = New System.Drawing.Size(29, 20)
-        Me.txt_MI_AddRec3.TabIndex = 50
-        Me.txt_MI_AddRec3.Text = "M/I"
+        Me.txt_MI_AddRec3.TabIndex = 9
+        Me.txt_MI_AddRec3.Text = "M"
+        Me.txt_MI_AddRec3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLN_AddRec3
         '
         Me.txtLN_AddRec3.Location = New System.Drawing.Point(295, 82)
         Me.txtLN_AddRec3.Name = "txtLN_AddRec3"
         Me.txtLN_AddRec3.Size = New System.Drawing.Size(111, 20)
-        Me.txtLN_AddRec3.TabIndex = 49
+        Me.txtLN_AddRec3.TabIndex = 10
         Me.txtLN_AddRec3.Text = "Last Name"
         Me.txtLN_AddRec3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -516,7 +519,7 @@ Partial Class AddRecord
         Me.txtFN_AddRec3.Location = New System.Drawing.Point(141, 82)
         Me.txtFN_AddRec3.Name = "txtFN_AddRec3"
         Me.txtFN_AddRec3.Size = New System.Drawing.Size(111, 20)
-        Me.txtFN_AddRec3.TabIndex = 48
+        Me.txtFN_AddRec3.TabIndex = 8
         Me.txtFN_AddRec3.Text = "First Name"
         Me.txtFN_AddRec3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -525,15 +528,16 @@ Partial Class AddRecord
         Me.txt_MI_AddRec2.Location = New System.Drawing.Point(260, 56)
         Me.txt_MI_AddRec2.Name = "txt_MI_AddRec2"
         Me.txt_MI_AddRec2.Size = New System.Drawing.Size(29, 20)
-        Me.txt_MI_AddRec2.TabIndex = 47
-        Me.txt_MI_AddRec2.Text = "M/I"
+        Me.txt_MI_AddRec2.TabIndex = 5
+        Me.txt_MI_AddRec2.Text = "M"
+        Me.txt_MI_AddRec2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLN_AddRec2
         '
         Me.txtLN_AddRec2.Location = New System.Drawing.Point(295, 56)
         Me.txtLN_AddRec2.Name = "txtLN_AddRec2"
         Me.txtLN_AddRec2.Size = New System.Drawing.Size(111, 20)
-        Me.txtLN_AddRec2.TabIndex = 46
+        Me.txtLN_AddRec2.TabIndex = 6
         Me.txtLN_AddRec2.Text = "Last Name"
         Me.txtLN_AddRec2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -542,7 +546,7 @@ Partial Class AddRecord
         Me.txtFN_AddRec2.Location = New System.Drawing.Point(141, 56)
         Me.txtFN_AddRec2.Name = "txtFN_AddRec2"
         Me.txtFN_AddRec2.Size = New System.Drawing.Size(111, 20)
-        Me.txtFN_AddRec2.TabIndex = 45
+        Me.txtFN_AddRec2.TabIndex = 4
         Me.txtFN_AddRec2.Text = "First Name"
         Me.txtFN_AddRec2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -551,15 +555,16 @@ Partial Class AddRecord
         Me.txt_MI_AddRec1.Location = New System.Drawing.Point(260, 30)
         Me.txt_MI_AddRec1.Name = "txt_MI_AddRec1"
         Me.txt_MI_AddRec1.Size = New System.Drawing.Size(29, 20)
-        Me.txt_MI_AddRec1.TabIndex = 44
-        Me.txt_MI_AddRec1.Text = "M/I"
+        Me.txt_MI_AddRec1.TabIndex = 1
+        Me.txt_MI_AddRec1.Text = "M"
+        Me.txt_MI_AddRec1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLN_AddRec1
         '
         Me.txtLN_AddRec1.Location = New System.Drawing.Point(295, 30)
         Me.txtLN_AddRec1.Name = "txtLN_AddRec1"
         Me.txtLN_AddRec1.Size = New System.Drawing.Size(111, 20)
-        Me.txtLN_AddRec1.TabIndex = 43
+        Me.txtLN_AddRec1.TabIndex = 2
         Me.txtLN_AddRec1.Text = "Last Name"
         Me.txtLN_AddRec1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -568,7 +573,7 @@ Partial Class AddRecord
         Me.txtFN_AddRec1.Location = New System.Drawing.Point(141, 30)
         Me.txtFN_AddRec1.Name = "txtFN_AddRec1"
         Me.txtFN_AddRec1.Size = New System.Drawing.Size(111, 20)
-        Me.txtFN_AddRec1.TabIndex = 42
+        Me.txtFN_AddRec1.TabIndex = 0
         Me.txtFN_AddRec1.Text = "First Name"
         Me.txtFN_AddRec1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -581,10 +586,10 @@ Partial Class AddRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(759, 437)
+        Me.ClientSize = New System.Drawing.Size(776, 428)
         Me.Controls.Add(Me.GroupBox_AddRec)
         Me.Name = "AddRecord"
-        Me.Text = "AddRecord"
+        Me.Text = "New Record Entry"
         Me.GroupBox_AddRec.ResumeLayout(False)
         Me.GroupBox_AddRec.PerformLayout()
         CType(Me.GraveSampleDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -609,16 +614,12 @@ Partial Class AddRecord
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents txt_MI_AddRec4 As TextBox
     Friend WithEvents txtLN_AddRec4 As TextBox
     Friend WithEvents txtFN_AddRec4 As TextBox
-    Friend WithEvents txt_MI_AddRec3 As TextBox
     Friend WithEvents txtLN_AddRec3 As TextBox
     Friend WithEvents txtFN_AddRec3 As TextBox
-    Friend WithEvents txt_MI_AddRec2 As TextBox
     Friend WithEvents txtLN_AddRec2 As TextBox
     Friend WithEvents txtFN_AddRec2 As TextBox
-    Friend WithEvents txt_MI_AddRec1 As TextBox
     Friend WithEvents txtLN_AddRec1 As TextBox
     Friend WithEvents txtFN_AddRec1 As TextBox
     Friend WithEvents txtSuf4 As TextBox
@@ -644,4 +645,8 @@ Partial Class AddRecord
     Friend WithEvents txtDesc As TextBox
     Friend WithEvents txtPhase As TextBox
     Friend WithEvents GraveSampleDataSet1 As GraveSampleDataSet
+    Friend WithEvents txt_MI_AddRec4 As TextBox
+    Friend WithEvents txt_MI_AddRec3 As TextBox
+    Friend WithEvents txt_MI_AddRec2 As TextBox
+    Friend WithEvents txt_MI_AddRec1 As TextBox
 End Class

@@ -9,7 +9,6 @@ Public Class Form1
 
 
 
-
     Private Sub lblAdmin_Click(sender As Object, e As EventArgs) Handles lblAdmin.Click
 
     End Sub
@@ -31,9 +30,8 @@ Public Class Form1
         cbCemetery.SelectedValue = 0
         cbCemetery.Text = "Please Select a Cemetery"
 
-
-
-
+        Me.ActiveControl = lblSearch
+        Me.PerformAutoScale()
 
 
     End Sub
@@ -140,5 +138,23 @@ Public Class Form1
 
     End Sub
 
+
+    Private Sub Button_Save_Click(sender As Object, e As EventArgs) Handles Button_Save.Click
+        If TxtBoxTitleNum.Text = Nothing Then
+            MessageBox.Show("Choose a Record")
+        Else
+            AddRecord.Show()
+        End If
+    End Sub
+
+    Private Sub txtFN_GotFocus() Handles txtFN.GotFocus
+        txtFN.Text = ""
+
+    End Sub
+
+    Private Sub txtLN_GotFocus() Handles txtLN.GotFocus
+        txtLN.Text = ""
+
+    End Sub
 
 End Class
