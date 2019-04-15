@@ -43,7 +43,6 @@ Partial Class Form1
         Me.txtFN = New System.Windows.Forms.TextBox()
         Me.gbHistory = New System.Windows.Forms.GroupBox()
         Me.MaskedTextBox_DateIssued = New System.Windows.Forms.MaskedTextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.TxtBoxTitleNum = New System.Windows.Forms.TextBox()
         Me.TextBox_TitleHolder = New System.Windows.Forms.TextBox()
@@ -58,7 +57,6 @@ Partial Class Form1
         Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.ComboBox_Phase = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBox_LotNum = New System.Windows.Forms.TextBox()
         Me.TextBox_TypeMemorial = New System.Windows.Forms.TextBox()
         Me.TextBox_Section = New System.Windows.Forms.TextBox()
@@ -72,7 +70,7 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.gbRemarks = New System.Windows.Forms.GroupBox()
         Me.lblDocuments = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_UploadFile = New System.Windows.Forms.Button()
         Me.TextBox_Price = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TextBox_Desc = New System.Windows.Forms.TextBox()
@@ -96,15 +94,17 @@ Partial Class Form1
         Me.RetNameDGVTableAdapter = New Cemetary_Proj.GraveSampleDataSetTableAdapters.RetNameDGVTableAdapter()
         Me.RetNameDGVTableAdapter1 = New Cemetary_Proj.GraveSampleDataSet1TableAdapters.RetNameDGVTableAdapter()
         Me.GetDaPplTableAdapter = New Cemetary_Proj.GraveSampleDataSet2TableAdapters.GetDaPplTableAdapter()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btnViewDocs = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Form1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gbSearch.SuspendLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GraveSampleDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbHistory.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbLocation.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbRemarks.SuspendLayout()
         Me.gbDeceased.SuspendLayout()
         CType(Me.DeceasedDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +112,8 @@ Partial Class Form1
         CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -140,7 +142,9 @@ Partial Class Form1
         Me.gbSearch.Controls.Add(Me.cbCemetery)
         Me.gbSearch.Controls.Add(Me.txtLN)
         Me.gbSearch.Controls.Add(Me.txtFN)
-        Me.gbSearch.Location = New System.Drawing.Point(12, 12)
+
+        Me.gbSearch.Location = New System.Drawing.Point(31, 12)
+
         Me.gbSearch.Name = "gbSearch"
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
@@ -293,7 +297,9 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
-        Me.gbHistory.Location = New System.Drawing.Point(12, 246)
+
+        Me.gbHistory.Location = New System.Drawing.Point(31, 265)
+
         Me.gbHistory.Name = "gbHistory"
         Me.gbHistory.Size = New System.Drawing.Size(867, 216)
         Me.gbHistory.TabIndex = 32
@@ -308,16 +314,6 @@ Partial Class Form1
         Me.MaskedTextBox_DateIssued.Size = New System.Drawing.Size(71, 20)
         Me.MaskedTextBox_DateIssued.TabIndex = 10
         Me.MaskedTextBox_DateIssued.ValidatingType = GetType(Date)
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Cemetary_Proj.My.Resources.Resources.CemeteryRegisterPicture
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 49)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(222, 155)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 22
-        Me.PictureBox1.TabStop = False
         '
         'TextBox_Address
         '
@@ -428,7 +424,9 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
-        Me.gbLocation.Location = New System.Drawing.Point(12, 468)
+
+        Me.gbLocation.Location = New System.Drawing.Point(31, 498)
+
         Me.gbLocation.Name = "gbLocation"
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
@@ -468,15 +466,6 @@ Partial Class Form1
         Me.Label13.Size = New System.Drawing.Size(50, 16)
         Me.Label13.TabIndex = 22
         Me.Label13.Text = "Phase:"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Cemetary_Proj.My.Resources.Resources.GenericMap
-        Me.PictureBox2.Location = New System.Drawing.Point(479, 46)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(222, 166)
-        Me.PictureBox2.TabIndex = 21
-        Me.PictureBox2.TabStop = False
         '
         'TextBox_LotNum
         '
@@ -581,14 +570,17 @@ Partial Class Form1
         '
         'gbRemarks
         '
+        Me.gbRemarks.Controls.Add(Me.btnViewDocs)
         Me.gbRemarks.Controls.Add(Me.lblDocuments)
-        Me.gbRemarks.Controls.Add(Me.Button1)
+        Me.gbRemarks.Controls.Add(Me.btn_UploadFile)
         Me.gbRemarks.Controls.Add(Me.TextBox_Price)
         Me.gbRemarks.Controls.Add(Me.Label16)
         Me.gbRemarks.Controls.Add(Me.TextBox_Desc)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
-        Me.gbRemarks.Location = New System.Drawing.Point(6, 723)
+
+        Me.gbRemarks.Location = New System.Drawing.Point(31, 743)
+
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(867, 96)
         Me.gbRemarks.TabIndex = 34
@@ -603,14 +595,16 @@ Partial Class Form1
         Me.lblDocuments.TabIndex = 28
         Me.lblDocuments.Text = "Documents"
         '
-        'Button1
+        'btn_UploadFile
         '
-        Me.Button1.Location = New System.Drawing.Point(717, 60)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(130, 23)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Upload Document"
-        Me.Button1.UseVisualStyleBackColor = True
+
+        Me.btn_UploadFile.Location = New System.Drawing.Point(709, 60)
+        Me.btn_UploadFile.Name = "btn_UploadFile"
+        Me.btn_UploadFile.Size = New System.Drawing.Size(130, 23)
+        Me.btn_UploadFile.TabIndex = 27
+        Me.btn_UploadFile.Text = "Upload Document"
+        Me.btn_UploadFile.UseVisualStyleBackColor = True
+
         '
         'TextBox_Price
         '
@@ -664,7 +658,9 @@ Partial Class Form1
         Me.gbDeceased.Controls.Add(Me.btn_AddDec)
         Me.gbDeceased.Controls.Add(Me.DeceasedDGV)
         Me.gbDeceased.Controls.Add(Me.Label17)
-        Me.gbDeceased.Location = New System.Drawing.Point(6, 825)
+
+        Me.gbDeceased.Location = New System.Drawing.Point(31, 845)
+
         Me.gbDeceased.Name = "gbDeceased"
         Me.gbDeceased.Size = New System.Drawing.Size(867, 227)
         Me.gbDeceased.TabIndex = 35
@@ -781,6 +777,43 @@ Partial Class Form1
         '
         Me.GetDaPplTableAdapter.ClearBeforeFill = True
         '
+
+        'BackgroundWorker1
+        '
+        '
+        'btnViewDocs
+        '
+        Me.btnViewDocs.Location = New System.Drawing.Point(709, 19)
+        Me.btnViewDocs.Name = "btnViewDocs"
+        Me.btnViewDocs.Size = New System.Drawing.Size(130, 23)
+        Me.btnViewDocs.TabIndex = 29
+        Me.btnViewDocs.Text = "View Documents"
+        Me.btnViewDocs.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Cemetary_Proj.My.Resources.Resources.GenericMap
+        Me.PictureBox2.Location = New System.Drawing.Point(479, 46)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(222, 166)
+        Me.PictureBox2.TabIndex = 21
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Cemetary_Proj.My.Resources.Resources.CemeteryRegisterPicture
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 49)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(222, 155)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 22
+        Me.PictureBox1.TabStop = False
+        '
+        'Form1BindingSource
+        '
+        Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
+        '
+
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -788,7 +821,10 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
-        Me.ClientSize = New System.Drawing.Size(921, 464)
+
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1136, 698)
+
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
@@ -804,10 +840,8 @@ Partial Class Form1
         CType(Me.GraveSampleDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbHistory.ResumeLayout(False)
         Me.gbHistory.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbLocation.ResumeLayout(False)
         Me.gbLocation.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbRemarks.ResumeLayout(False)
         Me.gbRemarks.PerformLayout()
         Me.gbDeceased.ResumeLayout(False)
@@ -817,6 +851,8 @@ Partial Class Form1
         CType(Me.GraveSampleDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GraveSampleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetNameDGVBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Form1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -858,7 +894,7 @@ Partial Class Form1
     Friend WithEvents Label12 As Label
     Friend WithEvents gbRemarks As GroupBox
     Friend WithEvents lblDocuments As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_UploadFile As Button
     Friend WithEvents TextBox_Price As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents TextBox_Desc As TextBox
@@ -895,4 +931,6 @@ Partial Class Form1
     Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CasketDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btn_AddDec As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnViewDocs As Button
 End Class

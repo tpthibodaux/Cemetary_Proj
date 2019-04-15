@@ -93,6 +93,18 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form_FileUpload.Designer.vb">
+      <DependentUpon>Form_FileUpload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FileUpload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ViewFiles.Designer.vb">
+      <DependentUpon>Form_ViewFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ViewFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GraveSampleDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +119,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GraveSampleDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GraveSampleDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GraveSampleDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -135,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FileUpload.resx">
+      <DependentUpon>Form_FileUpload.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ViewFiles.resx">
+      <DependentUpon>Form_ViewFiles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -176,6 +199,17 @@
     </None>
     <None Include="GraveSampleDataSet2.xss">
       <DependentUpon>GraveSampleDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GraveSampleDataSet3.xsc">
+      <DependentUpon>GraveSampleDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GraveSampleDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GraveSampleDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GraveSampleDataSet3.xss">
+      <DependentUpon>GraveSampleDataSet3.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
