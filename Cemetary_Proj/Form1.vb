@@ -9,7 +9,6 @@ Public Class Form1
 
 
 
-
     Private Sub lblAdmin_Click(sender As Object, e As EventArgs) Handles lblAdmin.Click
 
     End Sub
@@ -31,9 +30,8 @@ Public Class Form1
         cbCemetery.SelectedValue = 0
         cbCemetery.Text = "Please Select a Cemetery"
 
-
-
-
+        Me.ActiveControl = lblSearch
+        Me.PerformAutoScale()
 
 
     End Sub
@@ -142,6 +140,7 @@ Public Class Form1
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
 
+
     End Sub
 
     Private Sub btn_UploadFile_Click(sender As Object, e As EventArgs) Handles btn_UploadFile.Click
@@ -183,4 +182,5 @@ Public Class Form1
     Private Sub gbSearch_Enter(sender As Object, e As EventArgs) Handles gbSearch.Enter
 
     End Sub
+
 End Class

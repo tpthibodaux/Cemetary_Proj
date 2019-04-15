@@ -120,12 +120,13 @@ Partial Class Form1
         'lblAdmin
         '
         Me.lblAdmin.AutoSize = True
+        Me.lblAdmin.CausesValidation = False
         Me.lblAdmin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAdmin.Location = New System.Drawing.Point(23, 16)
         Me.lblAdmin.Name = "lblAdmin"
         Me.lblAdmin.Size = New System.Drawing.Size(53, 16)
-        Me.lblAdmin.TabIndex = 1
+        Me.lblAdmin.TabIndex = 0
         Me.lblAdmin.Text = "Admin?"
         '
         'gbSearch
@@ -141,7 +142,9 @@ Partial Class Form1
         Me.gbSearch.Controls.Add(Me.cbCemetery)
         Me.gbSearch.Controls.Add(Me.txtLN)
         Me.gbSearch.Controls.Add(Me.txtFN)
+
         Me.gbSearch.Location = New System.Drawing.Point(31, 12)
+
         Me.gbSearch.Name = "gbSearch"
         Me.gbSearch.Size = New System.Drawing.Size(867, 228)
         Me.gbSearch.TabIndex = 31
@@ -149,47 +152,50 @@ Partial Class Form1
         '
         'Button_Save
         '
-        Me.Button_Save.Location = New System.Drawing.Point(126, 199)
+        Me.Button_Save.Location = New System.Drawing.Point(225, 199)
         Me.Button_Save.Name = "Button_Save"
-        Me.Button_Save.Size = New System.Drawing.Size(151, 23)
-        Me.Button_Save.TabIndex = 13
+        Me.Button_Save.Size = New System.Drawing.Size(130, 23)
+        Me.Button_Save.TabIndex = 6
         Me.Button_Save.Text = "Edit Record"
         Me.Button_Save.UseVisualStyleBackColor = True
         '
         'Button_Delete
         '
-        Me.Button_Delete.Location = New System.Drawing.Point(466, 199)
+        Me.Button_Delete.Location = New System.Drawing.Point(555, 199)
         Me.Button_Delete.Name = "Button_Delete"
-        Me.Button_Delete.Size = New System.Drawing.Size(141, 22)
-        Me.Button_Delete.TabIndex = 12
+        Me.Button_Delete.Size = New System.Drawing.Size(130, 23)
+        Me.Button_Delete.TabIndex = 8
         Me.Button_Delete.Text = "Delete Record"
         Me.Button_Delete.UseVisualStyleBackColor = True
         '
         'Button_Search
         '
-        Me.Button_Search.Location = New System.Drawing.Point(669, 44)
+        Me.Button_Search.BackColor = System.Drawing.SystemColors.Control
+        Me.Button_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button_Search.Location = New System.Drawing.Point(786, 42)
         Me.Button_Search.Name = "Button_Search"
-        Me.Button_Search.Size = New System.Drawing.Size(85, 20)
-        Me.Button_Search.TabIndex = 11
+        Me.Button_Search.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Search.TabIndex = 4
         Me.Button_Search.Text = "Search"
-        Me.Button_Search.UseVisualStyleBackColor = True
+        Me.Button_Search.UseVisualStyleBackColor = False
         '
         'lblSearch
         '
         Me.lblSearch.AutoSize = True
         Me.lblSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSearch.Location = New System.Drawing.Point(344, 16)
+        Me.lblSearch.Location = New System.Drawing.Point(413, 9)
         Me.lblSearch.Name = "lblSearch"
         Me.lblSearch.Size = New System.Drawing.Size(80, 25)
         Me.lblSearch.TabIndex = 10
         Me.lblSearch.Text = "Search"
+        Me.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnNewCard
         '
-        Me.btnNewCard.Location = New System.Drawing.Point(302, 199)
+        Me.btnNewCard.Location = New System.Drawing.Point(390, 200)
         Me.btnNewCard.Name = "btnNewCard"
-        Me.btnNewCard.Size = New System.Drawing.Size(136, 23)
-        Me.btnNewCard.TabIndex = 6
+        Me.btnNewCard.Size = New System.Drawing.Size(130, 23)
+        Me.btnNewCard.TabIndex = 7
         Me.btnNewCard.Text = "Add New Card"
         Me.btnNewCard.UseVisualStyleBackColor = True
         '
@@ -253,27 +259,28 @@ Partial Class Form1
         '
         Me.cbCemetery.FormattingEnabled = True
         Me.cbCemetery.Items.AddRange(New Object() {"St. Francis de Sales Cemetery # 1", "St. Francis de Sales Cemetery #2", "St. Joseph"})
-        Me.cbCemetery.Location = New System.Drawing.Point(440, 44)
+        Me.cbCemetery.Location = New System.Drawing.Point(546, 43)
         Me.cbCemetery.Name = "cbCemetery"
         Me.cbCemetery.Size = New System.Drawing.Size(212, 21)
-        Me.cbCemetery.TabIndex = 4
+        Me.cbCemetery.TabIndex = 3
         Me.cbCemetery.Text = "Select Cemetery"
         '
         'txtLN
         '
-        Me.txtLN.Location = New System.Drawing.Point(327, 44)
+        Me.txtLN.Location = New System.Drawing.Point(379, 44)
         Me.txtLN.Name = "txtLN"
-        Me.txtLN.Size = New System.Drawing.Size(111, 20)
-        Me.txtLN.TabIndex = 3
+        Me.txtLN.Size = New System.Drawing.Size(150, 20)
+        Me.txtLN.TabIndex = 2
         Me.txtLN.Text = "Last Name"
         Me.txtLN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtFN
         '
-        Me.txtFN.Location = New System.Drawing.Point(210, 44)
+        Me.txtFN.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.txtFN.Location = New System.Drawing.Point(212, 44)
         Me.txtFN.Name = "txtFN"
-        Me.txtFN.Size = New System.Drawing.Size(111, 20)
-        Me.txtFN.TabIndex = 2
+        Me.txtFN.Size = New System.Drawing.Size(150, 20)
+        Me.txtFN.TabIndex = 1
         Me.txtFN.Text = "First Name"
         Me.txtFN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -290,7 +297,9 @@ Partial Class Form1
         Me.gbHistory.Controls.Add(Me.Label3)
         Me.gbHistory.Controls.Add(Me.Label2)
         Me.gbHistory.Controls.Add(Me.Label1)
+
         Me.gbHistory.Location = New System.Drawing.Point(31, 265)
+
         Me.gbHistory.Name = "gbHistory"
         Me.gbHistory.Size = New System.Drawing.Size(867, 216)
         Me.gbHistory.TabIndex = 32
@@ -303,7 +312,7 @@ Partial Class Form1
         Me.MaskedTextBox_DateIssued.Name = "MaskedTextBox_DateIssued"
         Me.MaskedTextBox_DateIssued.ReadOnly = True
         Me.MaskedTextBox_DateIssued.Size = New System.Drawing.Size(71, 20)
-        Me.MaskedTextBox_DateIssued.TabIndex = 23
+        Me.MaskedTextBox_DateIssued.TabIndex = 10
         Me.MaskedTextBox_DateIssued.ValidatingType = GetType(Date)
         '
         'TextBox_Address
@@ -314,7 +323,7 @@ Partial Class Form1
         Me.TextBox_Address.ReadOnly = True
         Me.TextBox_Address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox_Address.Size = New System.Drawing.Size(240, 40)
-        Me.TextBox_Address.TabIndex = 19
+        Me.TextBox_Address.TabIndex = 11
         '
         'TxtBoxTitleNum
         '
@@ -323,7 +332,7 @@ Partial Class Form1
         Me.TxtBoxTitleNum.Name = "TxtBoxTitleNum"
         Me.TxtBoxTitleNum.ReadOnly = True
         Me.TxtBoxTitleNum.Size = New System.Drawing.Size(71, 20)
-        Me.TxtBoxTitleNum.TabIndex = 18
+        Me.TxtBoxTitleNum.TabIndex = 12
         '
         'TextBox_TitleHolder
         '
@@ -332,7 +341,7 @@ Partial Class Form1
         Me.TextBox_TitleHolder.Name = "TextBox_TitleHolder"
         Me.TextBox_TitleHolder.ReadOnly = True
         Me.TextBox_TitleHolder.Size = New System.Drawing.Size(240, 40)
-        Me.TextBox_TitleHolder.TabIndex = 15
+        Me.TextBox_TitleHolder.TabIndex = 9
         '
         'Label6
         '
@@ -378,11 +387,12 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(267, 16)
+        Me.Label1.Location = New System.Drawing.Point(350, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(211, 25)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "History of Ownership"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
@@ -414,7 +424,9 @@ Partial Class Form1
         Me.gbLocation.Controls.Add(Me.Label10)
         Me.gbLocation.Controls.Add(Me.Label11)
         Me.gbLocation.Controls.Add(Me.Label12)
+
         Me.gbLocation.Location = New System.Drawing.Point(31, 498)
+
         Me.gbLocation.Name = "gbLocation"
         Me.gbLocation.Size = New System.Drawing.Size(867, 239)
         Me.gbLocation.TabIndex = 33
@@ -426,7 +438,7 @@ Partial Class Form1
         Me.TextBox_Tier.Name = "TextBox_Tier"
         Me.TextBox_Tier.ReadOnly = True
         Me.TextBox_Tier.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Tier.TabIndex = 25
+        Me.TextBox_Tier.TabIndex = 15
         '
         'VScrollBar1
         '
@@ -437,11 +449,12 @@ Partial Class Form1
         '
         'ComboBox_Phase
         '
+        Me.ComboBox_Phase.BackColor = System.Drawing.SystemColors.Menu
         Me.ComboBox_Phase.FormattingEnabled = True
         Me.ComboBox_Phase.Location = New System.Drawing.Point(209, 189)
         Me.ComboBox_Phase.Name = "ComboBox_Phase"
         Me.ComboBox_Phase.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox_Phase.TabIndex = 23
+        Me.ComboBox_Phase.TabIndex = 19
         Me.ComboBox_Phase.Text = "Select Phase"
         '
         'Label13
@@ -460,7 +473,7 @@ Partial Class Form1
         Me.TextBox_LotNum.Name = "TextBox_LotNum"
         Me.TextBox_LotNum.ReadOnly = True
         Me.TextBox_LotNum.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_LotNum.TabIndex = 19
+        Me.TextBox_LotNum.TabIndex = 17
         '
         'TextBox_TypeMemorial
         '
@@ -476,7 +489,7 @@ Partial Class Form1
         Me.TextBox_Section.Name = "TextBox_Section"
         Me.TextBox_Section.ReadOnly = True
         Me.TextBox_Section.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Section.TabIndex = 17
+        Me.TextBox_Section.TabIndex = 16
         '
         'TextBox_Cemetery
         '
@@ -484,7 +497,7 @@ Partial Class Form1
         Me.TextBox_Cemetery.Name = "TextBox_Cemetery"
         Me.TextBox_Cemetery.ReadOnly = True
         Me.TextBox_Cemetery.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Cemetery.TabIndex = 16
+        Me.TextBox_Cemetery.TabIndex = 14
         '
         'TextBox_NameOnMemor
         '
@@ -493,7 +506,7 @@ Partial Class Form1
         Me.TextBox_NameOnMemor.Name = "TextBox_NameOnMemor"
         Me.TextBox_NameOnMemor.ReadOnly = True
         Me.TextBox_NameOnMemor.Size = New System.Drawing.Size(246, 20)
-        Me.TextBox_NameOnMemor.TabIndex = 15
+        Me.TextBox_NameOnMemor.TabIndex = 13
         '
         'Label7
         '
@@ -549,7 +562,7 @@ Partial Class Form1
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(276, 16)
+        Me.Label12.Location = New System.Drawing.Point(349, 17)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(212, 25)
         Me.Label12.TabIndex = 9
@@ -565,7 +578,9 @@ Partial Class Form1
         Me.gbRemarks.Controls.Add(Me.TextBox_Desc)
         Me.gbRemarks.Controls.Add(Me.Label15)
         Me.gbRemarks.Controls.Add(Me.Label14)
+
         Me.gbRemarks.Location = New System.Drawing.Point(31, 743)
+
         Me.gbRemarks.Name = "gbRemarks"
         Me.gbRemarks.Size = New System.Drawing.Size(867, 96)
         Me.gbRemarks.TabIndex = 34
@@ -582,12 +597,14 @@ Partial Class Form1
         '
         'btn_UploadFile
         '
+
         Me.btn_UploadFile.Location = New System.Drawing.Point(709, 60)
         Me.btn_UploadFile.Name = "btn_UploadFile"
         Me.btn_UploadFile.Size = New System.Drawing.Size(130, 23)
         Me.btn_UploadFile.TabIndex = 27
         Me.btn_UploadFile.Text = "Upload Document"
         Me.btn_UploadFile.UseVisualStyleBackColor = True
+
         '
         'TextBox_Price
         '
@@ -595,7 +612,7 @@ Partial Class Form1
         Me.TextBox_Price.Name = "TextBox_Price"
         Me.TextBox_Price.ReadOnly = True
         Me.TextBox_Price.Size = New System.Drawing.Size(85, 20)
-        Me.TextBox_Price.TabIndex = 26
+        Me.TextBox_Price.TabIndex = 21
         '
         'Label16
         '
@@ -614,7 +631,7 @@ Partial Class Form1
         Me.TextBox_Desc.Name = "TextBox_Desc"
         Me.TextBox_Desc.ReadOnly = True
         Me.TextBox_Desc.Size = New System.Drawing.Size(240, 40)
-        Me.TextBox_Desc.TabIndex = 24
+        Me.TextBox_Desc.TabIndex = 20
         '
         'Label15
         '
@@ -630,7 +647,7 @@ Partial Class Form1
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(362, 21)
+        Me.Label14.Location = New System.Drawing.Point(408, 16)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(97, 25)
         Me.Label14.TabIndex = 24
@@ -641,7 +658,9 @@ Partial Class Form1
         Me.gbDeceased.Controls.Add(Me.btn_AddDec)
         Me.gbDeceased.Controls.Add(Me.DeceasedDGV)
         Me.gbDeceased.Controls.Add(Me.Label17)
+
         Me.gbDeceased.Location = New System.Drawing.Point(31, 845)
+
         Me.gbDeceased.Name = "gbDeceased"
         Me.gbDeceased.Size = New System.Drawing.Size(867, 227)
         Me.gbDeceased.TabIndex = 35
@@ -649,10 +668,10 @@ Partial Class Form1
         '
         'btn_AddDec
         '
-        Me.btn_AddDec.Location = New System.Drawing.Point(715, 19)
+        Me.btn_AddDec.Location = New System.Drawing.Point(717, 19)
         Me.btn_AddDec.Name = "btn_AddDec"
-        Me.btn_AddDec.Size = New System.Drawing.Size(130, 25)
-        Me.btn_AddDec.TabIndex = 30
+        Me.btn_AddDec.Size = New System.Drawing.Size(130, 23)
+        Me.btn_AddDec.TabIndex = 23
         Me.btn_AddDec.Text = "Add Deceased"
         Me.btn_AddDec.UseVisualStyleBackColor = True
         '
@@ -667,7 +686,7 @@ Partial Class Form1
         Me.DeceasedDGV.Location = New System.Drawing.Point(20, 50)
         Me.DeceasedDGV.Name = "DeceasedDGV"
         Me.DeceasedDGV.Size = New System.Drawing.Size(841, 171)
-        Me.DeceasedDGV.TabIndex = 29
+        Me.DeceasedDGV.TabIndex = 24
         '
         'FNameDataGridViewTextBoxColumn
         '
@@ -730,7 +749,7 @@ Partial Class Form1
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(346, 16)
+        Me.Label17.Location = New System.Drawing.Point(400, 15)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 25)
         Me.Label17.TabIndex = 28
@@ -758,6 +777,7 @@ Partial Class Form1
         '
         Me.GetDaPplTableAdapter.ClearBeforeFill = True
         '
+
         'BackgroundWorker1
         '
         '
@@ -793,6 +813,7 @@ Partial Class Form1
         '
         Me.Form1BindingSource.DataSource = GetType(Cemetary_Proj.Form1)
         '
+
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -800,15 +821,18 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(0, 85)
         Me.AutoScrollMinSize = New System.Drawing.Size(0, 85)
+
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1136, 698)
+
         Me.Controls.Add(Me.gbDeceased)
         Me.Controls.Add(Me.gbRemarks)
         Me.Controls.Add(Me.gbLocation)
         Me.Controls.Add(Me.gbHistory)
         Me.Controls.Add(Me.gbSearch)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = " "
         Me.gbSearch.ResumeLayout(False)
         Me.gbSearch.PerformLayout()
         CType(Me.SearchDGV, System.ComponentModel.ISupportInitialize).EndInit()
